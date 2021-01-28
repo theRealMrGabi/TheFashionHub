@@ -1,1 +1,48 @@
-@import "./screens.scss";
+$primary-100: #b2976f;
+$primary-200: #373737;
+$primary-300: #555454;
+$primary-400: #b0b0b0;
+$primary-grey: #747474;
+$secondary: #ff165d;
+$blackish: #2d4059;
+$grayWhite: #f6f6f6;
+$primary-black: #1d1d1d;
+
+.black-border {
+	border: 2px solid black;
+}
+.red-border {
+	border: 2px solid red;
+}
+
+body {
+	font-family: "Circe", serif;
+	font-size: 1rem;
+	line-height: 0.875rem;
+	margin: 0;
+	padding: 0;
+}
+
+img {
+	display: block;
+	height: 100%;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.hover-animate {
+	transition: all 200ms ease-in;
+
+	&:hover {
+		transform: translateX(0.5rem);
+		color: $primary-100;
+	}
+}
+
+.footer-link {
+	font-size: 0.75rem;
+	line-height: 1rem;
+	font-weight: 400;
+	padding-bottom: 1rem;
+}
