@@ -69,8 +69,11 @@ export const Footer: FC = () => {
 			</div>
 
 			<div className="bg-white h-32 font-normal text-black text-xs align-middle w-full text-center pt-12 md:px-16 px-8">
-				&copy; {new Date().getFullYear()} theFashionHub. <br /> All Rights
-				Reserved
+				&copy; {new Date().getFullYear()}{" "}
+				<span>
+					<Link to="/">theFashionHub.</Link>
+				</span>{" "}
+				<br /> All Rights Reserved
 			</div>
 		</footer>
 	);

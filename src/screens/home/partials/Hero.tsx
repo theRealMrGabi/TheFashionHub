@@ -1,7 +1,5 @@
 import { FC } from "react";
-import sweater from "../../../assets/images/blue-sweater.png";
-import sneakers from "../../../assets/images/red-hero-sneakers.png";
-import hero from "../../../assets/images/hero-img.png";
+import { sweater, sneakers, hero } from "assets/images";
 
 export const Hero: FC = () => {
 	return (

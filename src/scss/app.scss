@@ -29,6 +29,7 @@ img {
 	width: 100%;
 	background-repeat: no-repeat;
 	background-size: cover;
+	cursor: pointer;
 }
 
 .hover-animate {
@@ -45,4 +46,16 @@ img {
 	line-height: 1rem;
 	font-weight: 400;
 	padding-bottom: 1rem;
+}
+
+.footer-hero {
+	background-image: url("../assets//images//spiral-bg.png");
+	// opacity: 0.5;
+	// height: 31.25rem;
+	// height: 35rem;
+	// height: 80%;
+
+	img {
+		height: 100%;
+	}
 }

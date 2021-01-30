@@ -20,12 +20,16 @@ export const Navbar: FC = () => {
 					</div>
 
 					<div className="w-1/12 flex flex-row justify-evenly items-center">
-						<div className="cursor-pointer " title="Cart Items">
+						<NavLink to="/cart" className="cursor-pointer " title="Cart Items">
 							<CartIcon />
-						</div>
-						<span className="cursor-pointer " title="Liked Items">
+						</NavLink>
+						<NavLink
+							to="/wishlist"
+							className="cursor-pointer "
+							title="Liked Items"
+						>
 							<Like />
-						</span>
+						</NavLink>
 						{/* <span className="cursor-pointer">
 								<Human />
 							</span> */}
