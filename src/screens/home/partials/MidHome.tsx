@@ -8,10 +8,10 @@ type Props = {
 
 export const MidHome: FC<Props> = ({ Title, CardDetails }) => {
 	return (
-		<div className="border-black my-16 mx-8 md:mx-16">
-			<div className="font-medium text-base text-center mb-8">{Title}</div>
+		<div className="black-border mb-8">
+			<div className="font-normal text-base text-center mb-8">{Title}</div>
 
-			<div className="cards flex flex-col-reverse md:flex-row items-center justify-evenly">
+			<div className="cards flex flex-col-reverse md:flex-row items-center flex-wrap justify-between">
 				{CardDetails?.map((card: any, i: number) => {
 					const { Title, SubTitle, Price, image } = card;
 					return (

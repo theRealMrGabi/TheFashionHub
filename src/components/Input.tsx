@@ -19,6 +19,7 @@ export const Input = ({
 					</span>
 				)}
 			</div>
+
 			<div className="flex">
 				<input
 					{...rest}
