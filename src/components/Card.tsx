@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Like } from "icons";
-import basketball from "../assets/images/basketballer.png";
+import { basketballer } from "assets/images";
 
 type Props = {
 	Title?: any;
@@ -13,7 +13,7 @@ export const Card: FC<Props> = ({ Title, SubTitle, Price, image }) => {
 	return (
 		<div className="card-cont">
 			<div className="flex justify-center card">
-				<img src={image || basketball} alt="product" className="img" />
+				<img src={image || basketballer} alt="product" className="img" />
 
 				<div className="like like-icon">
 					<Like />

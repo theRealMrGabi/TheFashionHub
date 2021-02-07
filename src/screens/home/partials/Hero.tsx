@@ -1,11 +1,10 @@
 import { FC } from "react";
-import sweater from "../../../assets/images/blue-sweater.png";
-import sneakers from "../../../assets/images/red-hero-sneakers.png";
-import hero from "../../../assets/images/hero-img.png";
+import { sweater, sneakers, hero } from "assets/images";
 
 export const Hero: FC = () => {
 	return (
-		<div className="mx-8 md:mx-16 flex justify-between mb-8 h-full flex-col-reverse md:flex-row">
+		<div className="flex justify-between mb-8 h-full flex-col-reverse md:flex-row">
+			{/* <div className="mx-8 md:mx-16 flex justify-between mb-8 h-full flex-col-reverse md:flex-row"> */}
 			<div className="flex flex-col justify-between w-full md:w-6/12 md:pr-8">
 				<div className="flex flex-col-reverse md:flex-row justify-between">
 					<div className="my-4 md:my-0">
@@ -26,12 +25,12 @@ export const Hero: FC = () => {
 					</div>
 
 					<div className="hidden md:flex flex-col mt-4">
-						<p className="font-normal text-sm mb-2">SPORT WEARS</p>
+						<p className="font-bold text-sm mb-2">SPORT WEARS</p>
 
-						<p className="text-tiny">
+						<small>
 							Lorem ipsum dolor sit amet consectetur adipisicing elit. <br />{" "}
 							Quam ab magni error vero asperiores eum assumenda rerum!
-						</p>
+						</small>
 					</div>
 				</div>
 			</div>
@@ -42,12 +41,12 @@ export const Hero: FC = () => {
 				</div>
 
 				<div className="hidden md:flex flex-col mt-4">
-					<p className="font-normal text-sm mb-2">UP TO 50% OFF</p>
+					<p className="font-bold text-sm mb-2">UP TO 50% OFF</p>
 
-					<p className="text-tiny">
+					<small>
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. <br /> Quam
 						ab magni error vero asperiores eum assumenda rerum!
-					</p>
+					</small>
 				</div>
 			</div>
 		</div>

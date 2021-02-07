@@ -526,14 +526,14 @@ video {
   background-color: rgba(246, 246, 246, var(--tw-bg-opacity));
 }
 
+.bg-primaryGrey {
+  --tw-bg-opacity: 1;
+  background-color: rgba(116, 116, 116, var(--tw-bg-opacity));
+}
+
 .hover\:bg-primary-400:hover {
   --tw-bg-opacity: 1;
   background-color: rgba(176, 176, 176, var(--tw-bg-opacity));
-}
-
-.border-black {
-  --tw-border-opacity: 1;
-  border-color: rgba(0, 0, 0, var(--tw-border-opacity));
 }
 
 .border-purple-100 {
@@ -594,6 +594,10 @@ video {
   flex-direction: column-reverse;
 }
 
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
 .items-center {
   align-items: center;
 }
@@ -612,6 +616,10 @@ video {
 
 .justify-evenly {
   justify-content: space-evenly;
+}
+
+.font-light {
+  font-weight: 300;
 }
 
 .font-normal {
@@ -638,6 +646,10 @@ video {
   height: 8rem;
 }
 
+.h-2\/3 {
+  height: 66.666667%;
+}
+
 .h-full {
   height: 100%;
 }
@@ -662,6 +674,11 @@ video {
   line-height: 1.75rem;
 }
 
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -680,11 +697,6 @@ video {
 .mx-8 {
   margin-left: 2rem;
   margin-right: 2rem;
-}
-
-.my-16 {
-  margin-top: 4rem;
-  margin-bottom: 4rem;
 }
 
 .my-auto {
@@ -723,6 +735,14 @@ video {
 
 .mt-10 {
   margin-top: 2.5rem;
+}
+
+.mt-12 {
+  margin-top: 3rem;
+}
+
+.mt-16 {
+  margin-top: 4rem;
 }
 
 .mb-16 {
@@ -814,6 +834,11 @@ video {
   color: rgba(45, 64, 89, var(--tw-text-opacity));
 }
 
+.text-primaryGrey {
+  --tw-text-opacity: 1;
+  color: rgba(116, 116, 116, var(--tw-text-opacity));
+}
+
 .hover\:text-primary-100:hover {
   --tw-text-opacity: 1;
   color: rgba(178, 151, 111, var(--tw-text-opacity));
@@ -839,8 +864,24 @@ video {
   width: 3rem;
 }
 
+.w-3\/5 {
+  width: 60%;
+}
+
 .w-1\/12 {
   width: 8.333333%;
+}
+
+.w-3\/12 {
+  width: 25%;
+}
+
+.w-7\/12 {
+  width: 58.333333%;
+}
+
+.w-9\/12 {
+  width: 75%;
 }
 
 .w-11\/12 {
@@ -1001,6 +1042,11 @@ video {
     margin-bottom: 0px;
   }
 
+  .md\:mx-0 {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
   .md\:my-8 {
     margin-top: 2rem;
     margin-bottom: 2rem;
@@ -1009,6 +1055,10 @@ video {
   .md\:mx-16 {
     margin-left: 4rem;
     margin-right: 4rem;
+  }
+
+  .md\:mt-0 {
+    margin-top: 0px;
   }
 
   .md\:mb-0 {

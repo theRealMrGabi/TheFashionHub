@@ -1,11 +1,15 @@
 import { FC } from "react";
 import { Footer, Navbar } from "components";
 
-export const GeneralLayout: FC = ({ children }: any) => {
+type Props = {
+	children: any;
+};
+
+export const GeneralLayout: FC<Props> = ({ children }) => {
 	return (
 		<>
 			<Navbar />
-			<main>{children}</main>
+			<main className="mx-8 md:mx-16">{children}</main>
 			<Footer />
 		</>
 	);

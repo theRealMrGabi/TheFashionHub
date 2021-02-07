@@ -11,7 +11,7 @@ export const Navbar: FC = () => {
 	};
 
 	return (
-		<header className="mt-10 mb-16 mx-8 md:mx-16">
+		<header className="mt-10 mb-8 mx-8 md:mx-16">
 			{/* desktop logo */}
 			<div className="hidden md:block">
 				<div className="flex justify-end">
@@ -20,12 +20,16 @@ export const Navbar: FC = () => {
 					</div>
 
 					<div className="w-1/12 flex flex-row justify-evenly items-center">
-						<div className="cursor-pointer " title="Cart Items">
+						<NavLink to="/cart" className="cursor-pointer " title="Cart Items">
 							<CartIcon />
-						</div>
-						<span className="cursor-pointer " title="Liked Items">
+						</NavLink>
+						<NavLink
+							to="/wishlist"
+							className="cursor-pointer "
+							title="Liked Items"
+						>
 							<Like />
-						</span>
+						</NavLink>
 						{/* <span className="cursor-pointer">
 								<Human />
 							</span> */}

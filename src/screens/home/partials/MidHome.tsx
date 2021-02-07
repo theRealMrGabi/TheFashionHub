@@ -1,35 +1,32 @@
 import { FC } from "react";
 import { Button, Card } from "components";
 
-export const MidHome: FC = () => {
+type Props = {
+	Title: string;
+	CardDetails: any;
+};
+
+export const MidHome: FC<Props> = ({ Title, CardDetails }) => {
 	return (
-		<div className="border-black my-16 mx-8 md:mx-16">
-			<div className="font-medium text-base text-center mb-8">
-				JUST IN / Carefully selecting from the world’s best brands and boutiques
+		<div className="mb-8">
+			<div className="font-normal text-base text-center mb-8">{Title}</div>
+
+			<div className="cards flex flex-col-reverse md:flex-row items-center flex-wrap justify-between">
+				{CardDetails?.map((card: any, i: number) => {
+					const { Title, SubTitle, Price, image } = card;
+					return (
+						<div key={i}>
+							<Card
+								Title={Title}
+								SubTitle={SubTitle}
+								Price={Price}
+								image={image}
+							/>
+						</div>
+					);
+				})}
 			</div>
 
-			<div className="cards flex flex-col-reverse md:flex-row items-center justify-evenly">
-				<Card
-					Title="Nike Joggers"
-					SubTitle="Green and Red Hoodie"
-					Price="50000"
-				/>
-				<Card
-					Title="Nike Joggers"
-					SubTitle="Green and Red Hoodie"
-					Price="50000"
-				/>
-				<Card
-					Title="Nike Joggers"
-					SubTitle="Green and Red Hoodie"
-					Price="50000"
-				/>
-				<Card
-					Title="Nike Joggers"
-					SubTitle="Green and Red Hoodie"
-					Price="50000"
-				/>
-			</div>
 			<div className="flex justify-center items-center my-8">
 				<Button text="Shop Now" />
 			</div>

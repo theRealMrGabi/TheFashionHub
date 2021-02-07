@@ -3,7 +3,11 @@ import { Footer, Navbar } from "components";
 // import { useHistory } from "react-router-dom";
 // import { isUserLoggedIn, showToast } from "utils";
 
-export const AuthLayout: FC = ({ children }: any) => {
+type Props = {
+	children: any;
+};
+
+export const AuthLayout: FC<Props> = ({ children }) => {
 	// const history = useHistory();
 	// useEffect(() => {
 	// 	if (!isUserLoggedIn()) {
@@ -15,7 +19,7 @@ export const AuthLayout: FC = ({ children }: any) => {
 	return (
 		<>
 			<Navbar />
-			<main>{children}</main>
+			<main className="mx-8 md:mx-16">{children}</main>
 			<Footer />
 		</>
 	);
