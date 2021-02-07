@@ -1,0 +1,27 @@
+@import "./screens.scss";
+
+.product-header {
+	position: relative;
+	height: 14.87rem;
+	background-image: url("../assets//images/product-header.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	&--overlay {
+		position: absolute;
+		top: 2rem;
+		left: 2rem;
+		padding: 2rem;
+		background-color: $white;
+
+		width: 35.93rem;
+		height: 10.93rem;
+		justify-self: center;
+		justify-content: center;
+		align-content: center;
+	}
+
+	@include screen("medium") {
+		display: none;
+	}
+}

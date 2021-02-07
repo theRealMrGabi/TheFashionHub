@@ -1,9 +1,14 @@
 import { FC } from "react";
+import { ProductHeader, ProductList } from "./partials";
 
 const Products: FC = () => {
 	return (
-		<div>
-			<h3 className="text-primary-100 font-extrabold">products page</h3>
+		<div className="mb-16">
+			<ProductHeader />
+			<ProductList />
+			{/* <div className="black-border">
+				<hr className="bg-primaryGrey black-border" />
+			</div> */}
 		</div>
 	);
 };

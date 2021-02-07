@@ -39,7 +39,7 @@ const Home: FC = () => {
 
 			<MidHome Title="CHOICE" CardDetails={CharmProducts} />
 
-			<div className="footer-hero flex flex-col md:flex-row justify-between red-border mb-16 h-2/3">
+			<div className="footer-hero flex flex-col md:flex-row justify-between mb-16 h-2/3">
 				<img src={footerHero} alt="yellow jacket" />
 
 				<div className="flex flex-col justify-center w-3/5">

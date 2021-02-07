@@ -8,7 +8,7 @@ type Props = {
 
 export const MidHome: FC<Props> = ({ Title, CardDetails }) => {
 	return (
-		<div className="black-border mb-8">
+		<div className="mb-8">
 			<div className="font-normal text-base text-center mb-8">{Title}</div>
 
 			<div className="cards flex flex-col-reverse md:flex-row items-center flex-wrap justify-between">
