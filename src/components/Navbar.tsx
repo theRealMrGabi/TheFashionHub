@@ -11,7 +11,7 @@ export const Navbar: FC = () => {
 	};
 
 	return (
-		<header className="mt-10 mb-8 mx-8 md:mx-16">
+		<header className="mt-8 mb-16 md:mb-8 mx-8 md:mx-16">
 			{/* desktop logo */}
 			<div className="hidden md:block">
 				<div className="flex justify-end">

@@ -2,12 +2,10 @@
 
 .card-cont {
 	width: 17.125rem;
-	// height: 21.875rem;
 	height: 28.5rem;
 	position: relative;
 	margin: 0;
 	padding: 0;
-
 	overflow: hidden;
 	cursor: pointer;
 	border-radius: 0.5rem;
@@ -18,14 +16,16 @@
 	}
 
 	&:hover {
-		box-shadow: 0 10px 15px rgb(0, 0, 0);
+		box-shadow: 0 10px 15px rgb(226, 222, 222);
 		overflow: hidden;
 	}
 
 	.card {
 		position: relative;
-
 		overflow: hidden;
+		min-height: 21.875rem;
+		max-height: 21.875rem;
+		min-width: 17.125rem;
 
 		.like {
 			position: absolute;
@@ -46,24 +46,29 @@
 		}
 	}
 
-	&__title {
-		text-transform: uppercase;
-		font-weight: 700;
-		font-size: 1rem;
-		line-height: 1.5rem;
-		font-style: normal;
-		padding-left: 0.5rem;
-	}
+	&--sub-cont {
+		min-height: 4.875rem;
 
-	&__subtitle {
-		color: $primary-grey;
-		font-style: normal;
-		font-weight: 400;
-		font-size: 0.8rem;
-		padding-left: 0.5rem;
-	}
+		&__title {
+			text-transform: uppercase;
+			font-weight: 700;
+			font-size: 1rem;
+			line-height: 1.5rem;
+			font-style: normal;
+			padding-left: 0.5rem;
+		}
 
-	&__price {
-		margin-top: 0.7rem !important;
+		&__subtitle {
+			color: $primary-grey;
+			font-style: normal;
+			font-weight: 400;
+			font-size: 0.8rem;
+			padding-left: 0.5rem;
+		}
+
+		&__price {
+			margin-top: 0.7rem !important;
+			padding-left: 0.5rem;
+		}
 	}
 }
