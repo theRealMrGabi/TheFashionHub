@@ -10,12 +10,23 @@ $blackish: #2d4059;
 $grayWhite: #f6f6f6;
 $primary-black: #1d1d1d;
 $white: #ffff;
+$hr-color: #d1d1d1;
 
 .black-border {
 	border: 2px solid black;
 }
+
 .red-border {
 	border: 2px solid red;
+}
+
+hr {
+	border: 2px solid $hr-color;
+	border-radius: 5px;
+
+	@include screen("medium") {
+		border: 1px solid $hr-color;
+	}
 }
 
 body {

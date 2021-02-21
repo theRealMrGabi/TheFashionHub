@@ -2047,6 +2047,18 @@
     "@typescript-eslint/types" "4.8.1"
     eslint-visitor-keys "^2.0.0"
 
+"@uiw/react-radio@^4.7.12":
+  version "4.7.12"
+  resolved "https://registry.yarnpkg.com/@uiw/react-radio/-/react-radio-4.7.12.tgz#f1b70a9366a306d55b48d4913e8d7cae2e18cf91"
+  integrity sha512-h/grJ0D+E+AhoMWPw6DQQ3AaK98B0CKjMs78JGFjGHa0rV53/mP/AA8yBixNJjbpRE/EXauMBbPui1BnTtyOxw==
+  dependencies:
+    "@uiw/utils" "^4.7.12"
+
+"@uiw/utils@^4.7.12":
+  version "4.7.12"
+  resolved "https://registry.yarnpkg.com/@uiw/utils/-/utils-4.7.12.tgz#ea4559a2d940b7109330f80ebbf573ae4f4c3f7d"
+  integrity sha512-n5A22ZfMijVZmqEdYcflf7+JU807fobjgZ82b1G15/IXFQsQwwI1JV+m3qVcWCX3uzVxC7xnl9ylQFLp5mzBYQ==
+
 "@webassemblyjs/ast@1.9.0":
   version "1.9.0"
   resolved "https://registry.yarnpkg.com/@webassemblyjs/ast/-/ast-1.9.0.tgz#bd850604b4042459a5a41cd7d338cbed695ed964"

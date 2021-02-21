@@ -6,3 +6,4 @@ export * from "./Logo";
 export * from "./Mail";
 export * from "./Phone";
 export * from "./SearchIcon";
+export * from "./SelectArrow";

@@ -1,14 +1,22 @@
 import { FC } from "react";
-import { Card, ProductPageProducts } from "components";
+import { Card, ProductPageProducts, SelectRadio } from "components";
+
+const data = [
+	{ value: "all", key: "All" },
+	{ value: "Nike", key: "Nike" },
+	{ value: "Nike", key: "Nike" },
+	{ value: "Adidas", key: "Adidas" },
+	{ value: "Puma", key: "Puma" },
+];
 
 export const ProductList: FC = () => {
 	return (
 		<div className="flex flex-col md:flex-row mt-12 w-full">
-			<div className="select w-3/12 mx-auto md:mx-0">
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+			<div className="w-3/12 mx-auto md:mx-0 mr-8 pr-16">
+				{/* <div onClick={handleVisibility}>
+					<Dropdown category="Brands" visible={visible} />
+				</div> */}
+				<SelectRadio category="Brands" selectData={data} />
 			</div>
 
 			<div className="w-9/12 cards flex flex-col-reverse md:flex-row items-center flex-wrap justify-between mx-auto md:mx-0">

@@ -3,8 +3,7 @@ import { sweater, sneakers, hero } from "assets/images";
 
 export const Hero: FC = () => {
 	return (
-		<div className="flex justify-between mb-8 h-full flex-col-reverse md:flex-row">
-			{/* <div className="mx-8 md:mx-16 flex justify-between mb-8 h-full flex-col-reverse md:flex-row"> */}
+		<div className="flex justify-between mb-8 h-full flex-col-reverse md:flex-row mt-4 md:mt-0">
 			<div className="flex flex-col justify-between w-full md:w-6/12 md:pr-8">
 				<div className="flex flex-col-reverse md:flex-row justify-between">
 					<div className="my-4 md:my-0">

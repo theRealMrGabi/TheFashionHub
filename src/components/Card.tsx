@@ -20,14 +20,16 @@ export const Card: FC<Props> = ({ Title, SubTitle, Price, image }) => {
 				</div>
 			</div>
 
-			<div className="bg-white mt-3 flex flex-col">
-				<div className="card-cont__title">{Title || "Nike Joggers"}</div>
+			<div className="bg-white mt-3 flex flex-col card-cont--sub-cont">
+				<div className="card-cont--sub-cont__title">
+					{Title || "Nike Joggers"}
+				</div>
 
-				<div className="card-cont__subtitle">
+				<div className="card-cont--sub-cont__subtitle">
 					{SubTitle || "Green and Red Hoodie"}
 				</div>
 
-				<div className="card-cont__title card-cont__price">
+				<div className="card-cont--sub-cont__price">
 					&#x20A6;
 					{new Intl.NumberFormat().format(
 						Number(parseFloat(Price || `50000`).toFixed(2))

@@ -6,9 +6,6 @@ const Products: FC = () => {
 		<div className="mb-16">
 			<ProductHeader />
 			<ProductList />
-			{/* <div className="black-border">
-				<hr className="bg-primaryGrey black-border" />
-			</div> */}
 		</div>
 	);
 };
