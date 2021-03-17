@@ -39,11 +39,6 @@
 		"format": "prettier --write .",
 		"build:surge": "npm run build && cd build && cp index.html 200.html && surge --domain=https://thefashionhub.surge.sh"
 	},
-	"husky": {
-		"hooks": {
-			"pre-commit": "yarn run format && git add ."
-		}
-	},
 	"eslintConfig": {
 		"extends": [
 			"react-app",
