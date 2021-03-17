@@ -41,11 +41,8 @@
 	},
 	"husky": {
 		"hooks": {
-			"pre-commit": "lint-staged"
+			"pre-commit": "yarn run format && git add ."
 		}
-	},
-	"lint-staged": {
-		"*": "prettier --write"
 	},
 	"eslintConfig": {
 		"extends": [
