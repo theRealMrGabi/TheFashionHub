@@ -1,5 +1,5 @@
 {
   "hooks": {
-    "pre-commit": "yarn run format && git add ."
+    "pre-commit": "yarn run format && git add -A ."
   }
 }
