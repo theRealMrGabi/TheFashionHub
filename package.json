@@ -37,7 +37,13 @@
 		"test": "react-scripts test",
 		"eject": "react-scripts eject",
 		"format": "prettier --write .",
+		"check": "prettier --check .",
 		"build:surge": "npm run build && cd build && cp index.html 200.html && surge --domain=https://thefashionhub.surge.sh"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "yarn run format && git add ."
+		}
 	},
 	"eslintConfig": {
 		"extends": [
