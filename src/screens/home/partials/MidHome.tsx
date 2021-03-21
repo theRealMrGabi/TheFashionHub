@@ -28,7 +28,7 @@ export const MidHome: FC<Props> = ({ Title, CardDetails }) => {
 			</div>
 
 			<div className="flex justify-center items-center my-8">
-				<Button text="Shop Now" />
+				<Button text="Shop Now" type="primary" />
 			</div>
 		</div>
 	);

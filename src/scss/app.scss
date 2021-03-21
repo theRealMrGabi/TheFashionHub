@@ -1,16 +1,17 @@
 @import "./screens.scss";
+@import "./color.scss";
 
-$primary-100: #b2976f;
-$primary-200: #373737;
-$primary-300: #555454;
-$primary-400: #b0b0b0;
-$primary-grey: #747474;
-$secondary: #ff165d;
-$blackish: #2d4059;
-$grayWhite: #f6f6f6;
-$primary-black: #1d1d1d;
-$white: #ffff;
-$hr-color: #d1d1d1;
+// $primary-100: #b2976f;
+// $primary-200: #373737;
+// $primary-300: #555454;
+// $primary-400: #b0b0b0;
+// $primary-grey: #747474;
+// $secondary: #ff165d;
+// $blackish: #2d4059;
+// $grayWhite: #f6f6f6;
+// $primary-black: #1d1d1d;
+// $white: #ffff;
+// $hr-color: #d1d1d1;
 
 .black-border {
 	border: 2px solid black;
@@ -20,15 +21,6 @@ $hr-color: #d1d1d1;
 	border: 2px solid red;
 }
 
-hr {
-	border: 2px solid $hr-color;
-	border-radius: 5px;
-
-	@include screen("medium") {
-		border: 1px solid $hr-color;
-	}
-}
-
 body {
 	font-family: "Circe", serif;
 	font-size: 1rem;
@@ -36,6 +28,15 @@ body {
 	line-height: 0.875rem;
 	margin: 0;
 	padding: 0;
+}
+
+hr {
+	border: 2px solid $hr-color;
+	border-radius: 5px;
+
+	@include screen("medium") {
+		border: 1px solid $hr-color;
+	}
 }
 
 img {
@@ -54,6 +55,15 @@ img {
 		transform: translateX(0.5rem);
 		color: $primary-100;
 	}
+}
+
+.transaparent-btn {
+	border: 1px solid $primary-100 !important;
+	background-color: $grayWhite !important;
+	font-size: 0.8rem !important;
+	color: $primary-100 !important;
+	font-weight: 400 !important;
+	line-height: 5rem !important;
 }
 
 .footer-link {
