@@ -1,5 +1,6 @@
 export * from "./Auth";
 export * from "./CartIcon";
+export * from "./Cancel";
 export * from "./EyeIcon";
 export * from "./Like";
 export * from "./Logo";

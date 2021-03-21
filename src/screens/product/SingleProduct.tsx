@@ -10,11 +10,11 @@ const SingleProduct: FC<RouteComponentProps> = (props: any) => {
 	return (
 		<div className="flex flex-col single-product">
 			<div className="flex flex-col md:flex-row justify-between top mb-8">
-				<div className="flex flex-col md:flex-row justify-center img-holder mb-4 md:mb-0 black-border mx-auto">
+				<div className="flex flex-col md:flex-row justify-center img-holder mb-4 md:mb-0  mx-auto">
 					<img src={NikeVest} alt="nike" className="" />
 				</div>
 
-				<div className="flex flex-col details-holder red-border sm:mx-0 md:mx-16 md:px-4">
+				<div className="flex flex-col details-holder sm:mx-0 md:mx-16 md:px-4">
 					<h3 className="">Nike</h3>
 					<p className="title-desc">woven color in prague</p>
 					<p className="color">
