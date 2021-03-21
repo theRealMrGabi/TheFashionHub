@@ -1,7 +1,8 @@
 import { FC } from "react";
 import { RouteComponentProps } from "react-router";
 import { NikeVest } from "assets/images";
-import { Card, Button } from "components";
+import { Button, TrendyProducts } from "components";
+import { MidHome } from "screens/home/partials";
 
 const SingleProduct: FC<RouteComponentProps> = (props: any) => {
 	// const id = props.match.params.id;
@@ -38,11 +39,9 @@ const SingleProduct: FC<RouteComponentProps> = (props: any) => {
 
 			<hr />
 
-			<div className="flex my-8">
-				you may also like
-				<Card />
-				<Card />
-				<Card />
+			<div className="flex flex-col my-8 may-like">
+				<div className="others">YOU MAY ALSO LIKE</div>
+				<MidHome CardDetails={TrendyProducts} />
 			</div>
 		</div>
 	);

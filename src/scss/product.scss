@@ -1,3 +1,4 @@
+@import "./color.scss";
 @import "./screens.scss";
 
 .product-header {
@@ -61,7 +62,7 @@
 				font-weight: 0.8rem;
 				line-height: 1.39rem;
 				text-transform: capitalize;
-				color: #1e1e1e;
+				color: $secondary-black;
 			}
 
 			.color {
@@ -70,7 +71,7 @@
 				color: #adadad;
 
 				.color-ans {
-					color: #1e1e1e;
+					color: $secondary-black;
 					text-transform: capitalize;
 				}
 			}
@@ -80,12 +81,30 @@
 				font-weight: 400;
 				font-size: 0.8rem;
 				line-height: 1.39rem;
-				color: #1e1e1e;
+				color: $secondary-black;
 			}
 
 			@include screen("medium") {
 				width: 100%;
 			}
+		}
+	}
+
+	.may-like {
+		.others {
+			margin-top: 1rem;
+			margin-bottom: 3rem;
+			font-weight: 400;
+			font-size: 0.8rem;
+			line-height: 1.39rem;
+			color: $secondary-black;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.other-card {
+			padding-left: 8rem /* 80px */;
+			padding-right: 5rem; /* 80px */
 		}
 	}
 }

@@ -2,14 +2,16 @@ import { FC } from "react";
 import { Button, Card } from "components";
 
 type Props = {
-	Title: string;
+	Title?: string;
 	CardDetails: any;
 };
 
 export const MidHome: FC<Props> = ({ Title, CardDetails }) => {
 	return (
 		<div className="mb-8">
-			<div className="font-normal text-base text-center mb-8">{Title}</div>
+			{Title && (
+				<div className="font-normal text-base text-center mb-8">{Title}</div>
+			)}
 
 			<div className="cards flex flex-col-reverse md:flex-row items-center flex-wrap justify-between">
 				{CardDetails?.map((card: any, i: number) => {
@@ -27,9 +29,11 @@ export const MidHome: FC<Props> = ({ Title, CardDetails }) => {
 				})}
 			</div>
 
-			<div className="flex justify-center items-center my-8">
-				<Button text="Shop Now" type="primary" />
-			</div>
+			{Title && (
+				<div className="flex justify-center items-center my-8">
+					<Button text="Shop Now" type="primary" />
+				</div>
+			)}
 		</div>
 	);
 };
