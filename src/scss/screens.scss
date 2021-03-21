@@ -4,21 +4,25 @@
 			@content;
 		}
 	}
+
 	@if ($size == "large") {
 		@media screen and (min-width: 1440px) {
 			@content;
 		}
 	}
+
 	@if ($size == "laptop") {
 		@media screen and (min-width: 1024px) {
 			@content;
 		}
 	}
+
 	@if ($size == "tablet") {
 		@media screen and (min-width: 768px) {
 			@content;
 		}
 	}
+
 	@if ($size == "medium") {
 		@media screen and (min-width: 425px) {
 			@content;
