@@ -6,7 +6,7 @@
 }
 
 .red-border {
-	border: 2px solid red;
+	border: 2px solid $secondary;
 }
 
 body {
@@ -36,6 +36,11 @@ img {
 	cursor: pointer;
 }
 
+.under {
+	text-decoration: underline;
+	text-decoration-color: $secondary-grey;
+}
+
 .hover-animate {
 	transition: all 200ms ease-in;
 
@@ -45,13 +50,8 @@ img {
 	}
 }
 
-.transaparent-btn {
-	border: 1px solid $primary-100 !important;
-	background-color: $grayWhite !important;
-	font-size: 0.8rem !important;
-	color: $primary-100 !important;
-	font-weight: 400 !important;
-	line-height: 5rem !important;
+.grey-border {
+	border: 1px solid $tertiary-grey;
 }
 
 .footer-link {
