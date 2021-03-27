@@ -2,6 +2,7 @@ export * from "./AuthLayout";
 export * from "./Button";
 export * from "./Constants";
 export * from "./Card";
+export * from "./CartHolder";
 export * from "./Footer";
 export * from "./GeneralLayout";
 export * from "./Input";

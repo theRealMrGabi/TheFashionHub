@@ -2,12 +2,13 @@ import { FC } from "react";
 
 type Props = {
 	card?: boolean;
+	size?: string;
 };
 
-export const Like: FC<Props> = () => {
+export const Like: FC<Props> = ({ size }) => {
 	return (
 		<svg
-			className="w-6 h-6 like-icon"
+			className={`like-icon ${!size ? `w-6 h-6` : size}`}
 			fill="none"
 			stroke="currentColor"
 			viewBox="0 0 24 24"
