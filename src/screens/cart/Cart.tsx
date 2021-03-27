@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Button, CartHolder } from "components";
+import { Button, CartHolder, ProductPageProducts } from "components";
 
 const Cart: FC = () => {
 	return (
@@ -12,12 +12,24 @@ const Cart: FC = () => {
 					</div>
 				</div>
 
-				<div className="flex md:flex-row flex-col-reverse items-center">
+				<div className="flex md:flex-row flex-col-reverse items-start">
 					<div className="flex flex-col w-full md:w-4/5 mr-4">
-						<CartHolder />
+						{ProductPageProducts?.map((product: any, i: number) => {
+							const { Title, SubTitle, Price, image } = product;
+							return (
+								<div key={i}>
+									<CartHolder
+										Title={Title}
+										SubTitle={SubTitle}
+										Price={Price}
+										image={image}
+									/>
+								</div>
+							);
+						})}
 					</div>
 
-					<div className="flex flex-col w-full md:w-1/5 grey-border px-4 pt-2 mb-2 md:mb-0 summary-cont">
+					<div className="flex mt-0 md:mt-2 flex-col w-full md:w-1/5 grey-border px-4 pt-2 mb-2 md:mb-0 summary-cont">
 						<h4 className="font-bold text-sm">Summary</h4>
 						<p className="summary-item pt-3">
 							<span>Total Qty</span>
@@ -40,9 +52,7 @@ const Cart: FC = () => {
 							<span className="font-bold text-primary-100">&#8358;575</span>
 						</div>
 
-						{/* <div> */}
 						<Button type="primary" text="Go to Checkout" className="w-full" />
-						{/* </div> */}
 					</div>
 				</div>
 			</div>
