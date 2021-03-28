@@ -1,5 +1,10 @@
 import { FC } from "react";
-import { Button, CartHolder, ProductPageProducts } from "components";
+import {
+	Button,
+	CartHolder,
+	ProductPageProducts,
+	CartSummary,
+} from "components";
 
 const Cart: FC = () => {
 	return (
@@ -29,7 +34,8 @@ const Cart: FC = () => {
 						})}
 					</div>
 
-					<div className="flex mt-0 md:mt-2 flex-col w-full md:w-1/5 grey-border px-4 pt-2 mb-2 md:mb-0 summary-cont">
+					<CartSummary type="cart" />
+					{/* <div className="cart flex mt-0 md:mt-2 flex-col grey-border px-4 mb-2 md:mb-0 summary-cont md:w-1/5 w-full pt-2">
 						<h4 className="font-bold text-sm">Summary</h4>
 						<p className="summary-item pt-3">
 							<span>Total Qty</span>
@@ -53,7 +59,7 @@ const Cart: FC = () => {
 						</div>
 
 						<Button type="primary" text="Go to Checkout" className="w-full" />
-					</div>
+					</div> */}
 				</div>
 			</div>
 		</div>

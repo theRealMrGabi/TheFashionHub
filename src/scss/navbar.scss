@@ -1,3 +1,4 @@
+@import "./color.scss";
 @import "./screens.scss";
 
 .navlink {
@@ -46,5 +47,32 @@
 		margin-top: 0;
 		height: 27vh;
 		overflow-y: hidden;
+	}
+}
+
+.auth-navbar {
+	height: 2.5rem;
+	background: white;
+
+	.secure {
+		font-size: 0.75rem;
+		font-weight: 400;
+		line-height: 1.22rem;
+		color: $primary-green;
+		padding: 0.5rem 0.4rem;
+	}
+
+	.help {
+		color: $zero-black;
+		font-weight: 600;
+		font-size: 0.8rem;
+		line-height: 1.52rem;
+	}
+
+	.phone {
+		font-weight: 300;
+		font-size: 0.8rem;
+		line-height: 1.366rem;
+		padding: 0 0.8rem;
 	}
 }

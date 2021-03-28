@@ -1,0 +1,22 @@
+@import "./color.scss";
+@import "./screens.scss";
+
+.checkout {
+	height: auto;
+	.main {
+		width: 75%;
+	}
+	.summary {
+		// width: 25%;
+		width: 23%;
+	}
+
+	@include maxScreen("medium") {
+		.main {
+			width: 100%;
+		}
+		.summary {
+			width: 100%;
+		}
+	}
+}

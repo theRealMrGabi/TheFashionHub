@@ -6,5 +6,7 @@ export * from "./Like";
 export * from "./Logo";
 export * from "./Mail";
 export * from "./Phone";
+export * from "./RoundPhone";
 export * from "./SearchIcon";
+export * from "./Secure";
 export * from "./SelectArrow";
