@@ -6,12 +6,13 @@ export const Input = ({
 	label,
 	password,
 	suffix,
+	className,
 	...rest
 }: any) => {
 	const [passwordVisibility, setPasswordVisibility] = useState<boolean>(false);
 
 	return (
-		<div className="input">
+		<div className={`input mb-4`}>
 			<div className="flex justify-between">
 				{label && (
 					<span className="text-left font-medium text-sm block text-blackish mb-2">
@@ -26,7 +27,7 @@ export const Input = ({
 					type={
 						password ? (passwordVisibility ? "text" : "password") : rest.type
 					}
-					className={`px-4 py-2 border border-solid rounded overflow-hidden border-primary-400 ${
+					className={`px-4 py-2 border border-solid rounded overflow-hidden border-primary-400 w-full ${
 						password || rest.type === "search" ? `input-border` : ""
 					}`}
 					placeholder={placeholder}

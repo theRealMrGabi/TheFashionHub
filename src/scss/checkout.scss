@@ -5,9 +5,81 @@
 	height: auto;
 	.main {
 		width: 75%;
+
+		&.steps {
+			position: relative;
+
+			.track {
+				margin: 2rem;
+				margin-bottom: 4.5rem;
+				width: 80%;
+				height: 0;
+				border: 1px solid #e1e1e1;
+
+				.step-item {
+					position: absolute;
+					top: -0.2rem;
+
+					.key {
+						height: 9px;
+						width: 9px;
+						border-radius: 50%;
+						border: 0.5px solid #747474;
+						position: absolute;
+						top: 2rem;
+						background-color: white;
+					}
+
+					.step-lock {
+						visibility: hidden;
+						margin-bottom: 7px;
+						top: -35px;
+						margin-left: -3px;
+					}
+
+					// 					Weight
+					// 400
+					// Style
+					// normal
+					// Size
+					// 16px
+					// Line height
+					// 22.34px
+					.title {
+						margin-top: 1rem;
+						display: inline-block;
+						margin-left: -45%;
+						font-weight: 350;
+						font-style: normal;
+						font-size: 0.8rem;
+						line-height: 1.4rem;
+						white-space: nowrap;
+					}
+
+					&.completed {
+						.key {
+							background: #2eccb9;
+							border-color: #2eccb9;
+						}
+						.step-lock {
+							visibility: visible;
+						}
+						.title {
+							margin-top: 1rem;
+							display: inline-block;
+							margin-left: -45%;
+							font-weight: 500;
+							font-style: normal;
+							font-size: 0.8rem;
+							line-height: 1.4rem;
+							white-space: nowrap;
+						}
+					}
+				}
+			}
+		}
 	}
 	.summary {
-		// width: 25%;
 		width: 23%;
 	}
 
@@ -19,4 +91,7 @@
 			width: 100%;
 		}
 	}
+}
+
+.shipping {
 }

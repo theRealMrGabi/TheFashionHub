@@ -1,6 +1,6 @@
 import { FC } from "react";
 import {
-	Button,
+	// Button,
 	CartHolder,
 	ProductPageProducts,
 	CartSummary,
