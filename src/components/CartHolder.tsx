@@ -137,7 +137,7 @@ export const CartSummary: FC<SummaryProps> = ({ type }) => {
 				<span className="font-bold text-primary-100">&#8358;575</span>
 			</div>
 
-			<Button type="primary" text="Go to Checkout" className="w-full" />
+			<Button type="primary" text="Checkout" className="w-full" />
 		</div>
 	);
 };

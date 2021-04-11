@@ -5,6 +5,7 @@
 	height: auto;
 	.main {
 		width: 75%;
+		// padding-top: 3rem;
 
 		&.steps {
 			position: relative;
@@ -37,14 +38,6 @@
 						margin-left: -3px;
 					}
 
-					// 					Weight
-					// 400
-					// Style
-					// normal
-					// Size
-					// 16px
-					// Line height
-					// 22.34px
 					.title {
 						margin-top: 1rem;
 						display: inline-block;
@@ -86,6 +79,14 @@
 	@include maxScreen("medium") {
 		.main {
 			width: 100%;
+
+			&.steps {
+				.track {
+					// width: 100%;
+
+					margin-bottom: 1rem;
+				}
+			}
 		}
 		.summary {
 			width: 100%;
@@ -94,4 +95,12 @@
 }
 
 .shipping {
+}
+
+.payment {
+	.title {
+		font-weight: 600;
+		font-size: 1.25rem;
+		line-height: 1.75rem;
+	}
 }

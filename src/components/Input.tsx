@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { EyeOpen, EyeClose, SearchIcon } from "icons";
+import { EyeOpen, EyeClose, SearchIcon, CardSecondary } from "icons";
 
 export const Input = ({
 	placeholder,
@@ -28,7 +28,7 @@ export const Input = ({
 						password ? (passwordVisibility ? "text" : "password") : rest.type
 					}
 					className={`px-4 py-2 border border-solid rounded overflow-hidden border-primary-400 w-full ${
-						password || rest.type === "search" ? `input-border` : ""
+						password || rest.type === "search" || "card" ? `input-border` : ""
 					}`}
 					placeholder={placeholder}
 				/>
@@ -48,6 +48,12 @@ export const Input = ({
 				{rest.type === "search" && (
 					<div className="py-2 search-border">
 						<SearchSuffix />
+					</div>
+				)}
+
+				{rest.type === "card" && (
+					<div className="py-2 px-4 search-border">
+						<CardSecondary />
 					</div>
 				)}
 			</div>

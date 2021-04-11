@@ -9,7 +9,7 @@ export const ShippingCheckout: FC = () => {
 				<p className="font-normal text-sm">* Required fields</p>
 			</div>
 
-			<form className="w-full md:w-9/12 red-border">
+			<form className="w-full md:w-9/12">
 				<Input label="First Name *" placeholder="Enter first name" />
 
 				<Input label="Last Name *" placeholder="Enter last name" />

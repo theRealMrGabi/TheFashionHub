@@ -21,7 +21,7 @@ export const AuthLayout: FC<Props> = ({ children }) => {
 			<header className="bg-white">
 				<AuthNavbar />
 			</header>
-			<main className="mx-8 md:mx-16 blue-border">{children}</main>
+			<main className="mx-8 md:mx-16">{children}</main>
 		</div>
 	);
 };

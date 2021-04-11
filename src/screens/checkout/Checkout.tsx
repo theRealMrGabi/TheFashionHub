@@ -11,7 +11,7 @@ type Props = {
 const Checkout: FC<Props> = ({ step = 1 }) => {
 	return (
 		<div className="checkout flex flex-col md:flex-row md:justify-between">
-			<div className="main steps black-border bg-white">
+			<div className="main steps bg-white">
 				<div className="track">
 					<div
 						className={`step-item ${step === 1 ? "completed" : ""}`}
