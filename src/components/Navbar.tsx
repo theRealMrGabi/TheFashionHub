@@ -6,9 +6,7 @@ import { Input } from "components";
 export const Navbar: FC = () => {
 	const [toggle, setToggle] = useState<boolean>(false);
 
-	const handleToggle = () => {
-		setToggle(!toggle);
-	};
+	const handleToggle = () => setToggle(!toggle);
 
 	return (
 		<header className="mt-8 mb-16 md:mb-8 mx-8 md:mx-16">
@@ -23,6 +21,7 @@ export const Navbar: FC = () => {
 						<NavLink to="/cart" className="cursor-pointer " title="Cart Items">
 							<CartIcon />
 						</NavLink>
+
 						<NavLink
 							to="/wishlist"
 							className="cursor-pointer "
@@ -30,6 +29,7 @@ export const Navbar: FC = () => {
 						>
 							<Like />
 						</NavLink>
+
 						{/* <span className="cursor-pointer">
 								<Human />
 							</span> */}
@@ -127,7 +127,7 @@ export const Navbar: FC = () => {
 
 			{/* Mobile Search Bar */}
 			<div className="flex justify-center items-center md:hidden absolute mt-3">
-				<Input type="search" placeholder="Search" />
+				<Input type="search" placeholder="Search . . ." />
 			</div>
 		</header>
 	);

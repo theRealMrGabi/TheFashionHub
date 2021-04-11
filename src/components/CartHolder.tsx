@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { basketballer } from "assets/images";
 import { Like, Cancel } from "icons";
+import { Button } from "./Button";
 
 type Props = {
 	Title?: any;
@@ -8,6 +9,10 @@ type Props = {
 	Price?: number;
 	image?: string;
 	quantity?: number;
+};
+
+type SummaryProps = {
+	type?: string;
 };
 
 export const CartHolder: FC<Props> = ({
@@ -96,6 +101,43 @@ export const CartHolder: FC<Props> = ({
 				</div>
 			</div>
 			{/* Cart mobile View End */}
+		</div>
+	);
+};
+
+export const CartSummary: FC<SummaryProps> = ({ type }) => {
+	return (
+		<div
+			className={`cart flex flex-col grey-border px-4 ${
+				type === "cart" &&
+				`md:w-1/5 w-full pt-2 mt-0 md:mt-2 mb-2 md:mb-0 summary-cont`
+			}
+			${type === "checkout" && `px-4 py-4`}
+			`}
+		>
+			<h4 className="font-bold text-sm">Summary</h4>
+			<p className="summary-item pt-3">
+				<span>Total Qty</span>
+				<span>5</span>
+			</p>
+
+			<div className="summary-item">
+				<span>Total Amount</span>
+				<span className="font-bold text-primary-100">&#8358;500</span>
+			</div>
+
+			<div className="summary-item">
+				<span>Shipping Fee</span>
+				<span>&#8358;75</span>
+			</div>
+
+			<hr />
+			<div className="summary-item my-1">
+				<span>Total</span>
+				<span className="font-bold text-primary-100">&#8358;575</span>
+			</div>
+
+			<Button type="primary" text="Checkout" className="w-full" />
 		</div>
 	);
 };

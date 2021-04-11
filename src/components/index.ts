@@ -1,4 +1,5 @@
 export * from "./AuthLayout";
+export * from "./AuthNavbar";
 export * from "./Button";
 export * from "./Constants";
 export * from "./Card";

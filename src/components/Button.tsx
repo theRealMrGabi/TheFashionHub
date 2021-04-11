@@ -6,7 +6,7 @@ type Props = {
 	type: string;
 	loading?: boolean;
 	rest?: any;
-	className?: any;
+	className?: string;
 };
 
 export const Button: FC<Props> = ({
@@ -22,7 +22,9 @@ export const Button: FC<Props> = ({
 			{...rest}
 			className={`button transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0
 			${type === "primary" && `primary`}
-			${type === "secondary" && `secondary`} ${className} `}
+			${type === "secondary" && `secondary`} ${className}
+			${loading && `opacity-100`}
+			`}
 		>
 			{loading ? <Spinner /> : text}
 		</button>

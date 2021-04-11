@@ -26,6 +26,7 @@ import TedBag from "./ted-baker-bag.png";
 import NikeVest from "./Nike-Vest.png";
 import WineDress from "./Nike-wine-dress.png";
 import colorJacket from "./colored-jacket.png";
+import packageBox from "./box.svg";
 
 export {
 	perfume,
@@ -56,4 +57,5 @@ export {
 	NikeVest,
 	WineDress,
 	colorJacket,
+	packageBox,
 };

@@ -1,17 +1,18 @@
 import { useState } from "react";
-import { EyeOpen, EyeClose, SearchIcon } from "icons";
+import { EyeOpen, EyeClose, SearchIcon, CardSecondary } from "icons";
 
 export const Input = ({
 	placeholder,
 	label,
 	password,
 	suffix,
+	className,
 	...rest
 }: any) => {
 	const [passwordVisibility, setPasswordVisibility] = useState<boolean>(false);
 
 	return (
-		<div className="input">
+		<div className={`input mb-4`}>
 			<div className="flex justify-between">
 				{label && (
 					<span className="text-left font-medium text-sm block text-blackish mb-2">
@@ -26,8 +27,8 @@ export const Input = ({
 					type={
 						password ? (passwordVisibility ? "text" : "password") : rest.type
 					}
-					className={`px-4 py-2 border border-solid rounded overflow-hidden border-primary-400 ${
-						password || rest.type === "search" ? `input-border` : ""
+					className={`px-4 py-2 border border-solid rounded overflow-hidden border-primary-400 w-full ${
+						password || rest.type === "search" || "card" ? `input-border` : ""
 					}`}
 					placeholder={placeholder}
 				/>
@@ -47,6 +48,12 @@ export const Input = ({
 				{rest.type === "search" && (
 					<div className="py-2 search-border">
 						<SearchSuffix />
+					</div>
+				)}
+
+				{rest.type === "card" && (
+					<div className="py-2 px-4 search-border">
+						<CardSecondary />
 					</div>
 				)}
 			</div>

@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Footer, Navbar } from "components";
+import { AuthNavbar } from "components";
 // import { useHistory } from "react-router-dom";
 // import { isUserLoggedIn, showToast } from "utils";
 
@@ -17,10 +17,11 @@ export const AuthLayout: FC<Props> = ({ children }) => {
 	// }, [history]);
 
 	return (
-		<>
-			<Navbar />
+		<div className="w-full bg-grayWhite">
+			<header className="bg-white">
+				<AuthNavbar />
+			</header>
 			<main className="mx-8 md:mx-16">{children}</main>
-			<Footer />
-		</>
+		</div>
 	);
 };
