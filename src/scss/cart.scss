@@ -1,0 +1,57 @@
+@import "./color.scss";
+@import "./screens.scss";
+
+.cart {
+	.title {
+		width: 85%;
+		display: flex;
+		justify-content: center;
+	}
+
+	.continue {
+		width: 15%;
+		color: $tertiary-black;
+		cursor: pointer;
+	}
+
+	.summary-item {
+		font-size: 0.875rem;
+		line-height: 1.396rem;
+		font-weight: 400;
+		display: flex;
+		justify-content: space-between;
+		color: $primary-black;
+		padding-bottom: 0.4rem;
+	}
+
+	&.cont {
+		height: 14.25rem;
+
+		.image {
+			width: 25%;
+			padding: 1rem;
+
+			img {
+				height: 12rem;
+				width: auto;
+			}
+		}
+
+		.like {
+			color: $secondary-grey;
+			cursor: pointer;
+
+			&:hover {
+				color: $secondary;
+			}
+		}
+
+		@include screen("medium") {
+			width: 100%;
+		}
+	}
+
+	.summary-cont {
+		padding: 0.9rem;
+	}
+}

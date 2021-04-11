@@ -1,0 +1,82 @@
+@import "./color.scss";
+@import "./screens.scss";
+
+.long {
+	width: auto;
+}
+
+.navlink {
+	font-style: normal;
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 14px;
+	text-transform: uppercase;
+	margin: 0.5rem 0;
+
+	@include screen("tablet") {
+		margin: 0;
+	}
+
+	&:visited {
+		color: $primary-black;
+	}
+	&:hover {
+		color: $primary-100;
+	}
+	&:active {
+		color: $primary-400;
+	}
+}
+
+.product-card {
+	transition: 500ms linear;
+	:hover {
+		transform: scale(1.1);
+	}
+}
+
+.small-nav {
+	background: $grayWhite;
+	color: $primary-black;
+	animation: slideDown 1.5s ease-in-out;
+}
+
+@keyframes slideDown {
+	from {
+		margin-top: 0;
+		height: 0vh;
+		overflow-y: hidden;
+	}
+	to {
+		margin-top: 0;
+		height: 27vh;
+		overflow-y: hidden;
+	}
+}
+
+.auth-navbar {
+	height: 2.5rem;
+	background: white;
+
+	.secure {
+		font-size: 0.75rem;
+		font-weight: 400;
+		line-height: 1.22rem;
+		color: $primary-green;
+		padding: 0.5rem 0.4rem;
+	}
+
+	.help {
+		color: $zero-black;
+		font-weight: 600;
+		font-size: 0.8rem;
+		line-height: 1.52rem;
+	}
+
+	.phone {
+		font-weight: 300;
+		font-size: 0.8rem;
+		line-height: 1.366rem;
+		padding: 0 0.8rem;
+	}
+}

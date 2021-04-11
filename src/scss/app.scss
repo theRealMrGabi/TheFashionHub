@@ -1,1 +1,95 @@
 @import "./screens.scss";
+@import "./color.scss";
+
+.black-border {
+	border: 2px solid black;
+}
+
+.red-border {
+	border: 2px solid $secondary;
+}
+
+.blue-border {
+	border: 2px solid blue;
+}
+
+body {
+	font-family: "Circe", serif;
+	font-size: 1rem;
+	font-weight: normal;
+	line-height: 0.875rem;
+	margin: 0;
+	padding: 0;
+}
+
+hr {
+	border: 2px solid $hr-color;
+	border-radius: 5px;
+
+	@include screen("medium") {
+		border: 1px solid $hr-color;
+	}
+}
+
+img {
+	display: block;
+	height: 100%;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	cursor: pointer;
+}
+
+.under {
+	text-decoration: underline;
+	text-decoration-color: $secondary-grey;
+}
+
+.hover-animate {
+	transition: all 200ms ease-in;
+
+	&:hover {
+		transform: translateX(0.5rem);
+		color: $primary-100;
+	}
+}
+
+.grey-border {
+	border: 1px solid $tertiary-grey;
+}
+
+.footer-link {
+	font-size: 0.75rem;
+	line-height: 1rem;
+	font-weight: 400;
+	padding-bottom: 1rem;
+}
+
+.footer-hero {
+	background-image: url("../assets//images//spiral-bg.png");
+
+	img {
+		height: 100%;
+		margin-right: 2rem;
+
+		@include screen("tablet") {
+			width: 40%;
+		}
+	}
+
+	&__title {
+		font-family: "Circe", serif;
+		font-size: 1.2rem;
+		font-weight: 900;
+		font-style: normal;
+		line-height: 2.24rem;
+	}
+	&__count {
+		font-size: 4rem;
+		font-weight: 500;
+		font-style: normal;
+	}
+	&__description {
+		color: $primary-grey;
+	}
+}
