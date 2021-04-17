@@ -16,10 +16,7 @@ class ApiService {
 	private service: AxiosInstance;
 	hide: any;
 	constructor() {
-		const baseURL =
-			window.location.hostname === "localhost"
-				? `https://enter-your-api-baseURL/`
-				: `https://enter-your-api-baseURL/`;
+		const baseURL = `https://thefashionhub.herokuapp.com/api/v1/`;
 
 		const service = axios.create({
 			baseURL,
@@ -47,24 +44,18 @@ class ApiService {
 
 	handleSuccess(response: AxiosResponse) {
 		if (that.hide) that.hide && that.hide();
-		if (response.data.message) showToast(response.data.message, "success");
+		if (response?.data?.message) showToast(response?.data?.message, "success");
 
 		return response;
 	}
 
 	handleError = (error: AxiosError) => {
-		if (error.response === undefined)
+		if (error?.response === undefined)
 			showToast("No internet connection", "error");
 		else {
-			let message = "";
+			// let message = "";
 			const status = error?.response?.status;
-
-			message = error?.response?.data?.responseText;
-
-			if (Array.isArray(message)) {
-				// eslint-disable-next-line
-				message.map((msg: any) => showToast(msg.message, "error"));
-			} else showToast(message, "error");
+			// message = error?.response?.data?.responseText;
 
 			if (status && status === 401) {
 				local.clear();
@@ -125,7 +116,7 @@ class ApiService {
 					data: payload,
 				})
 				.then(
-					(response: { data: AxiosResponse }) => callback(response.data),
+					(response: { data: AxiosResponse }) => callback(response?.data),
 					errorCallback
 				);
 		}

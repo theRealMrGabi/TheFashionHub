@@ -2,6 +2,7 @@ import { FC } from "react";
 import { Like, Cancel } from "icons";
 import { basketballer } from "assets/images";
 import { Button } from "./Button";
+import { useHistory } from "react-router-dom";
 
 type Props = {
 	Title?: any;
@@ -9,12 +10,25 @@ type Props = {
 	Price?: string;
 	image?: string;
 	type?: string;
+	id?: string;
 };
 
-export const Card: FC<Props> = ({ Title, SubTitle, Price, image, type }) => {
+export const Card: FC<Props> = ({
+	Title,
+	SubTitle,
+	Price,
+	image,
+	type,
+	id,
+}) => {
+	const history = useHistory();
+
 	return (
 		<div className="card-cont">
-			<div className="flex justify-center card">
+			<div
+				className="flex justify-center card"
+				onClick={() => history.push(`/products/${id}`)}
+			>
 				<img src={image || basketballer} alt="product" className="img" />
 
 				{!type && (

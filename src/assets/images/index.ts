@@ -6,11 +6,11 @@ import cream from "./body-cream.png";
 import bodySpray from "./body-spray.png";
 import perfume from "./perfume.png";
 import hoodie from "./hoodie.png";
-import sweater from "./blue-sweater.png";
-import sneakers from "./red-hero-sneakers.png";
-import hero from "./hero-img.png";
-import midHero from "./mid-hero.png";
-import footerHero from "./footer-hero.png";
+// import sweater from "./blue-sweater.png";
+// import sneakers from "./red-hero-sneakers.png";
+// import hero from "./hero-img.png";
+// import midHero from "./mid-hero.png";
+// import footerHero from "./footer-hero.png";
 import productHeader from "./product-header.png";
 import adidasCropTop from "./adidas-crop-top.png";
 import adidasJoggingShoe from "./adidas-jogging-shoe.png";
@@ -37,11 +37,11 @@ export {
 	jacket,
 	basketballer,
 	Tomford,
-	sweater,
-	sneakers,
-	hero,
-	midHero,
-	footerHero,
+	// sweater,
+	// sneakers,
+	// hero,
+	// midHero,
+	// footerHero,
 	productHeader,
 	adidasCropTop,
 	adidasJoggingShoe,

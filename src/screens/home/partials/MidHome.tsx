@@ -15,14 +15,16 @@ export const MidHome: FC<Props> = ({ Title, CardDetails }) => {
 
 			<div className="cards flex flex-col-reverse md:flex-row items-center flex-wrap justify-between">
 				{CardDetails?.map((card: any, i: number) => {
-					const { Title, SubTitle, Price, image } = card;
+					const { name, subtitle, image, price, _id: id } = card;
+
 					return (
-						<div key={i}>
+						<div key={id}>
 							<Card
-								Title={Title}
-								SubTitle={SubTitle}
-								Price={Price}
+								Title={name}
+								SubTitle={subtitle}
+								Price={price}
 								image={image}
+								id={id}
 							/>
 						</div>
 					);

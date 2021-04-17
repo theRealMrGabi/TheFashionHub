@@ -1,5 +1,4 @@
 import { FC } from "react";
-import { sweater, sneakers, hero } from "assets/images";
 
 export const Hero: FC = () => {
 	return (
@@ -7,7 +6,10 @@ export const Hero: FC = () => {
 			<div className="flex flex-col justify-between w-full md:w-6/12 md:pr-8">
 				<div className="flex flex-col-reverse md:flex-row justify-between">
 					<div className="my-4 md:my-0">
-						<img src={sweater} alt="blue sweater" />
+						<img
+							src="https://res.cloudinary.com/gabirated/image/upload/v1618476887/theGadgetHub/jzdbvpuhlf3jfslig1os.png"
+							alt="blue sweater"
+						/>
 					</div>
 
 					<div className="font-medium justify-end text-lg md:text-2xl mt-8">
@@ -20,7 +22,10 @@ export const Hero: FC = () => {
 
 				<div className="flex justify-between flex-col">
 					<div>
-						<img src={sneakers} alt="Nike red sneakers" />
+						<img
+							src="https://res.cloudinary.com/gabirated/image/upload/v1618491433/theGadgetHub/jnyxuzuc4zoskzsorhpo.png"
+							alt="Nike red sneakers"
+						/>
 					</div>
 
 					<div className="hidden md:flex flex-col mt-4">
@@ -36,7 +41,10 @@ export const Hero: FC = () => {
 
 			<div className="w-full md:w-6/12 min-h-full flex justify-between flex-col">
 				<div className="w-full h-full md:w-auto">
-					<img src={hero} alt="hero" />
+					<img
+						src="https://res.cloudinary.com/gabirated/image/upload/v1618489916/theGadgetHub/sojvw6e17f94hiffnujz.png"
+						alt="hero"
+					/>
 				</div>
 
 				<div className="hidden md:flex flex-col mt-4">

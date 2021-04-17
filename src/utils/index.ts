@@ -74,3 +74,4 @@ export const callbackToast = (message: any) => {
 
 export * from "./axios";
 export * from "./storage";
+export * from "./useFilterProducts";

@@ -5,12 +5,12 @@ import { useDispatch } from "react-redux";
 import { showToast, local } from "utils";
 import { useHistory } from "react-router-dom";
 
-const history = useHistory();
-
-export const _SignUp = () => {
+export const SignUp = () => {
+	const history = useHistory();
 	const dispatch = useDispatch();
 
 	return (data: any, successCallback?: any, errorCallback?: any) => (
+		// eslint-disable-next-line
 		dispatch({ type: types.SIGNUP.REQUEST }),
 		axios.request(
 			"POST",
