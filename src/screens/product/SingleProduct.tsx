@@ -2,7 +2,7 @@ import { FC, useEffect } from "react";
 import { RouteComponentProps } from "react-router";
 import { Button, Loader } from "components";
 import { MidHome } from "screens/home/partials";
-import { GetAllProducts, GetSingleProduct } from "actions";
+import { AddItemsTocart, GetAllProducts, GetSingleProduct } from "actions";
 import { useSelector, useDispatch, batch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { useFilterProducts } from "utils";
@@ -13,13 +13,16 @@ const SingleProduct: FC<RouteComponentProps> = (props: any) => {
 	const history = useHistory();
 	const getSingleProduct = GetSingleProduct();
 	const getAllProducts = GetAllProducts();
+	const addItemsTocart = AddItemsTocart();
 
 	const { loading, product, products } = useSelector(
 		(state: any) => state.products
 	);
+	const { cart } = useSelector((state: any) => state.cart);
+	console.log("item added to cart --->", cart);
 
 	useEffect(() => {
-		if (id === "undefined") return history.push("/");
+		if (id === "undefined") return history.push("/products");
 		batch(() => {
 			dispatch(getAllProducts());
 			dispatch(getSingleProduct(id));
@@ -60,7 +63,13 @@ const SingleProduct: FC<RouteComponentProps> = (props: any) => {
 							</p>
 
 							<div className="my-7 flex flex-col">
-								<Button text="Add to Cart" type="primary" className="my-6" />
+								<Button
+									onClick={() => dispatch(addItemsTocart(product))}
+									text="Add to Cart"
+									type="primary"
+									className="my-6"
+								/>
+
 								<Button
 									text="Add to Wish List"
 									type="secondary"

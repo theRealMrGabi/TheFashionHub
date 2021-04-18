@@ -7,6 +7,7 @@ type Props = {
 	loading?: boolean;
 	rest?: any;
 	className?: string;
+	onClick?: React.MouseEventHandler<HTMLButtonElement>;
 };
 
 export const Button: FC<Props> = ({
@@ -14,10 +15,12 @@ export const Button: FC<Props> = ({
 	loading,
 	className,
 	type,
+	onClick,
 	...rest
 }) => {
 	return (
 		<button
+			onClick={onClick}
 			disabled={loading}
 			{...rest}
 			className={`button transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0
