@@ -10,7 +10,7 @@ const ProductReducer = (state = initialState, { type, payload }: any) => {
 	switch (type) {
 		case types.ALL_PRODUCTS.REQUEST:
 		case types.GET_SINGLE_PRODUCT.REQUEST:
-			return { ...state, loading: true };
+			return { ...state, loading: true, ...payload };
 
 		case types.ALL_PRODUCTS.SUCCESS:
 		case types.ALL_PRODUCTS.FAILURE:

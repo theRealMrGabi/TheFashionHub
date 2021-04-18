@@ -8,14 +8,12 @@ const About = lazy(() => import("screens/about/About"));
 const Advertising = lazy(() => import("screens/advertising/Advertising"));
 const Careers = lazy(() => import("screens/careers/Careers"));
 const Cart = lazy(() => import("screens/cart/Cart"));
-const Charm = lazy(() => import("screens/charm/Charm"));
 const Checkout = lazy(() => import("screens/checkout/Checkout"));
 const Contact = lazy(() => import("screens/contact/Contact"));
 const Faq = lazy(() => import("screens/faq/Faq"));
 const Login = lazy(() => import("screens/auth/Login"));
 const Men = lazy(() => import("screens/men/Men"));
 const Products = lazy(() => import("screens/product/Products"));
-const Shoes = lazy(() => import("screens/shoes/Shoes"));
 const Signup = lazy(() => import("screens/auth/Signup"));
 const SingleProduct = lazy(() => import("screens/product/SingleProduct"));
 const StyleAdvice = lazy(() => import("screens/styleAdvice/StyleAdvice"));
@@ -88,16 +86,6 @@ const App: FC = () => {
 				/>
 
 				<Route
-					path="/charm"
-					exact
-					render={(props) => (
-						<GeneralLayout {...props}>
-							<Charm />
-						</GeneralLayout>
-					)}
-				/>
-
-				<Route
 					path="/checkout"
 					exact
 					render={(props) => (
@@ -163,16 +151,6 @@ const App: FC = () => {
 					render={(props) => (
 						<GeneralLayout {...props}>
 							<SingleProduct {...props} />
-						</GeneralLayout>
-					)}
-				/>
-
-				<Route
-					path="/shoes"
-					exact
-					render={(props) => (
-						<GeneralLayout {...props}>
-							<Shoes />
 						</GeneralLayout>
 					)}
 				/>

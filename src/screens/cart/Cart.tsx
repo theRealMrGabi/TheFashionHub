@@ -5,14 +5,19 @@ import {
 	ProductPageProducts,
 	CartSummary,
 } from "components";
+import { useHistory } from "react-router-dom";
 
 const Cart: FC = () => {
+	const history = useHistory();
 	return (
 		<div className="cart mb-8">
 			<div className="w-full">
 				<div className="flex mb-8">
 					<h3 className="title font-semibold text-xl">Cart (5)</h3>
-					<div className="continue font-normal hidden md:block text-sm under">
+					<div
+						className="continue font-normal hidden md:block text-sm under"
+						onClick={() => history.push("/products")}
+					>
 						Continue shopping
 					</div>
 				</div>

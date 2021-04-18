@@ -1,18 +1,18 @@
 import { FC, useEffect } from "react";
 import { Hero, MidHome } from "./partials";
-import { getAllProducts } from "actions";
+import { GetAllProducts } from "actions";
 import { useDispatch, useSelector } from "react-redux";
 import { Loader } from "components";
 import { useFilterProducts } from "utils";
 
 const Home: FC = () => {
 	const dispatch = useDispatch();
-	const _getAllProducts = getAllProducts();
+	const getAllProducts = GetAllProducts();
 
 	const { loading, products } = useSelector((state: any) => state.products);
 
 	useEffect(() => {
-		dispatch(_getAllProducts());
+		dispatch(getAllProducts());
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 

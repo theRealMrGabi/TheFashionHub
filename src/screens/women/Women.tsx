@@ -1,11 +1,8 @@
 import { FC } from "react";
+import { DisplayProducts } from "custom";
 
 const Women: FC = () => {
-	return (
-		<div>
-			<h4>women clothes</h4>
-		</div>
-	);
+	return <DisplayProducts category="women" />;
 };
 
 export default Women;

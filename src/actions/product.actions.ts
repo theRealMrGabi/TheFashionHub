@@ -3,12 +3,12 @@ import axios from "utils/axios";
 import { Dispatch } from "redux";
 import { showToast } from "utils";
 
-export const getAllProducts = () => {
+export const GetAllProducts = () => {
 	return (successCallback?: any, errorCallback?: any) => (
 		dispatch: Dispatch
 	) => (
 		// eslint-disable-next-line
-		dispatch({ type: types.ALL_PRODUCTS.REQUEST }),
+		dispatch({ type: types.ALL_PRODUCTS.REQUEST, payload: [] }),
 		axios.request(
 			`GET`,
 			`product`,
@@ -32,7 +32,7 @@ export const GetSingleProduct = () => {
 		dispatch: Dispatch
 	) => (
 		// eslint-disable-next-line
-		dispatch({ type: types.GET_SINGLE_PRODUCT.REQUEST }),
+		dispatch({ type: types.GET_SINGLE_PRODUCT.REQUEST, payload: {} }),
 		axios.request(
 			`GET`,
 			`product/${id}`,

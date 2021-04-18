@@ -1,11 +1,8 @@
 import { FC } from "react";
+import { DisplayProducts } from "custom";
 
 const Accessories: FC = () => {
-	return (
-		<div>
-			<h3>Accessories page</h3>
-		</div>
-	);
+	return <DisplayProducts category="accessories" />;
 };
 
 export default Accessories;

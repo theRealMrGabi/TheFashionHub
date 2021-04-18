@@ -74,6 +74,14 @@ export const Navbar: FC = () => {
 						<NavLink
 							className="hover-animate navlink"
 							activeStyle={{ color: "#2d4059" }}
+							to="/products"
+						>
+							All
+						</NavLink>
+
+						<NavLink
+							className="hover-animate navlink"
+							activeStyle={{ color: "#2d4059" }}
 							to="/men"
 						>
 							Men
@@ -90,25 +98,9 @@ export const Navbar: FC = () => {
 						<NavLink
 							className="hover-animate navlink"
 							activeStyle={{ color: "#2d4059" }}
-							to="/shoes"
-						>
-							Shoes
-						</NavLink>
-
-						<NavLink
-							className="hover-animate navlink"
-							activeStyle={{ color: "#2d4059" }}
 							to="/accessories"
 						>
 							Accessories
-						</NavLink>
-
-						<NavLink
-							className="hover-animate navlink"
-							activeStyle={{ color: "#2d4059" }}
-							to="/charm"
-						>
-							Charm
 						</NavLink>
 
 						<NavLink
@@ -119,6 +111,7 @@ export const Navbar: FC = () => {
 							Login
 						</NavLink>
 					</div>
+
 					<div className="hidden md:flex md:w-6/12 md:justify-end md:items-center ">
 						<Input type="search" placeholder="Search" />
 					</div>
