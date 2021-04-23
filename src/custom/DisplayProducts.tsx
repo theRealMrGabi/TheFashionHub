@@ -14,6 +14,7 @@ export const DisplayProducts: FC<Props> = ({ category }) => {
 
 	const filteredProduct = useMemo(
 		() => products?.filter((product: any) => product?.tags?.includes(category)),
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 		[products]
 	);
 

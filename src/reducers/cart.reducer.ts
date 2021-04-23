@@ -6,16 +6,14 @@ const initialState = {
 };
 
 const CartReducer = (state = initialState, { type, payload }: any) => {
-	let cart = state.cart;
 	switch (type) {
 		case types.ADD_ITEM_TO_CART:
+		case types.REMOVE_ITEM_FROM_CART:
+		case types.CLEAR_ITEM:
 			return { ...state, cart: payload };
-		// cart.push(payload);
-		//@ts-ignore
-		// return { ...state, cart: cart.push(payload) };
 
-		case types.REMOVE_ITEM_FROM_CART.REQUEST:
-			return { ...state, ...payload };
+		case types.EMPTY_CART:
+			return { ...state, cart: [] };
 
 		default:
 			return state;

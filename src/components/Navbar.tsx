@@ -119,7 +119,7 @@ export const Navbar: FC = () => {
 			</nav>
 
 			{/* Mobile Search Bar */}
-			<div className="flex justify-center items-center md:hidden absolute mt-3">
+			<div className="md:hidden absolute mt-3 w-10/12">
 				<Input type="search" placeholder="Search . . ." />
 			</div>
 		</header>

@@ -29,7 +29,7 @@ export const Card: FC<Props> = ({
 				className="flex justify-center card"
 				onClick={() => history.push(`/products/${id}`)}
 			>
-				<img src={image || basketballer} alt="product" className="img" />
+				<img src={image || basketballer} alt={Title} className="img" />
 
 				{!type && (
 					<div className="like">

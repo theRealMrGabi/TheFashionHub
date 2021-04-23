@@ -14,6 +14,7 @@ export const useFilterProducts = ({ category, goods }: Props) => {
 		);
 		const slice = filter?.slice(0, 4);
 		return setProducts(slice);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [goods]);
 
 	useEffect(() => {

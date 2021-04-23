@@ -47,13 +47,20 @@
 				}
 			}
 		}
+
 		.details-holder {
-			width: 50%;
+			width: 100%;
 			h3 {
 				font-weight: 600;
 				font-size: 3.5rem;
 				line-height: 5rem;
 				text-transform: capitalize;
+
+				@include maxScreen("medium") {
+					font-weight: 450;
+					font-size: 2rem;
+					line-height: 2.5rem;
+				}
 			}
 
 			.title-desc {
@@ -82,10 +89,6 @@
 				font-size: 0.8rem;
 				line-height: 1.39rem;
 				color: $secondary-black;
-			}
-
-			@include screen("medium") {
-				width: 100%;
 			}
 		}
 	}

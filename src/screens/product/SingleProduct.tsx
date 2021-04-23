@@ -42,17 +42,17 @@ const SingleProduct: FC<RouteComponentProps> = (props: any) => {
 			) : (
 				<div className="flex flex-col single-product">
 					<div className="flex flex-col md:flex-row justify-between top mb-8">
-						<div className="flex flex-col md:flex-row justify-center img-holder mb-4 md:mb-0  mx-auto">
+						<div className="flex flex-col md:flex-row justify-center img-holder mb-4 md:mb-0 mx-auto">
 							<img src={product?.image?.[0]} alt={product?.name} />
 						</div>
 
 						<div className="flex flex-col details-holder sm:mx-0 md:mx-16 md:px-4">
-							<h3 className="">{product?.name}</h3>
-							<p className="title-desc">{product?.subtitle}</p>
-							<p className="color">
-								color: <span className="color-ans">white</span>
+							<h3 className="my-1">{product?.name}</h3>
+							<p className="title-desc my-1">{product?.subtitle}</p>
+							<p className="color my-1">
+								Color: <span className="color-ans">white</span>
 							</p>
-							<p>
+							<p className="my-1">
 								Price:{" "}
 								<span className="text-primary-100 font-bold">
 									&#x20A6;
