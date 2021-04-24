@@ -5,7 +5,6 @@ import { useSelector } from "react-redux";
 
 const Cart: FC = () => {
 	const { cart } = useSelector((state: any) => state.cart);
-	console.log("item added to cart --->", cart);
 
 	const history = useHistory();
 	return (
@@ -25,13 +24,11 @@ const Cart: FC = () => {
 
 				<div className="flex md:flex-row flex-col-reverse items-start">
 					<div className="flex flex-col w-full md:w-4/5 mr-4">
-						{cart?.map((product: any) => {
-							return (
-								<div key={product?._id}>
-									<CartHolder product={product} />
-								</div>
-							);
-						})}
+						{cart?.map((product: any) => (
+							<div key={product?._id}>
+								<CartHolder product={product} />
+							</div>
+						))}
 					</div>
 
 					<CartSummary type="cart" />

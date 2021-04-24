@@ -1,7 +1,9 @@
 import * as types from "../actions/types";
 
+const data: any = localStorage.getItem("cart");
+
 const initialState = {
-	cart: [],
+	cart: JSON.parse(data) || [],
 	likes: 0,
 };
 

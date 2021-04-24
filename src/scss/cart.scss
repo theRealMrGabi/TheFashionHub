@@ -37,6 +37,22 @@
 			}
 		}
 
+		.qty {
+			width: 8rem;
+			height: 2rem;
+			border: 2px solid $hr-color;
+
+			.first {
+				width: 2rem;
+				border-right: 2px solid $hr-color;
+			}
+
+			.third {
+				width: 2rem;
+				border-left: 2px solid $hr-color;
+			}
+		}
+
 		.like {
 			color: $secondary-grey;
 			cursor: pointer;

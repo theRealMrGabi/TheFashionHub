@@ -1,46 +1,64 @@
-# Getting Started with Create React App
+# TheFashionHub - ClientSide
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> An E-commerce app built with React and TypeScript. A very intuiutive and sleek UI, modern programming practice was used in the development of this project.
 
-## Available Scripts
+## App URL
 
-In the project directory, you can run:
+This App is hosted on surge and below is the link.
+[TheFashionHub](https://www.thefashionhub.surge.sh)
 
-### `yarn start`
+## Technologies
 
-Runs the app in the development mode.\
+- React
+- TypeScript
+- Redux
+- Node-Sass
+- Tailwindcss
+
+## Features
+
+- View all products
+- View products by category
+- Like product (add to wishlist)
+- Add product to cart (add new item or increase quantity)
+- Remove product from cart (totally remove or reduce quantity)
+- Empty cart
+- Checkout with Stripe
+
+## Setup
+
+### Development
+
+Clone the project and run `yarn start` or `npm start` to start the app in development mode.
+
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Production
 
-### `yarn test`
+Clone the project and run `yarn build` or `npm run build` to build and optimize the app for production.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Environment Variables
 
-### `yarn build`
+No environment variable is required to run this project.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Contributing
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Contributions are always welcome!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-### `yarn eject`
+## Contact
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Author and Developer
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- [@theRealMrGabi](https://www.github.com/therealmrgabi) - GitHub
+- [@theRealMrGabi](https://www.twitter.com/therealmrgabi) - Twitter
+- [@Adegabi Ibrahim](https://www.linkedin.com/in/ibrahimadegabi/) - LinkedIn
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## License
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+[MIT](https://choosealicense.com/licenses/mit/)

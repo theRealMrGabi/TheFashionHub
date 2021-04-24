@@ -1,10 +1,9 @@
 import { FC } from "react";
 import { Like, Cancel, Cart } from "icons";
-import { basketballer } from "assets/images";
 import { Button } from "./Button";
 import { useHistory } from "react-router-dom";
 import { AddItemsTocart } from "actions";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 
 type Props = {
 	type?: string;
@@ -16,9 +15,6 @@ export const Card: FC<Props> = ({ type, product }) => {
 	const dispatch = useDispatch();
 	const addItemsTocart = AddItemsTocart();
 
-	const { cart } = useSelector((state: any) => state.cart);
-	console.log("item added to cart --->", cart);
-
 	const { name, subtitle, _id: id, price, image } = product;
 
 	return (
@@ -27,7 +23,7 @@ export const Card: FC<Props> = ({ type, product }) => {
 				className="flex justify-center card"
 				// onClick={() => history.push(`/products/${id}`)}
 			>
-				<img src={image || basketballer} alt={subtitle} className="img" />
+				<img src={image} alt={subtitle} className="img" />
 
 				{!type && (
 					<div className="like">
@@ -55,19 +51,11 @@ export const Card: FC<Props> = ({ type, product }) => {
 				className="bg-white mt-3 flex flex-col card-cont--sub-cont"
 				onClick={() => history.push(`/products/${id}`)}
 			>
-				<div className="card-cont--sub-cont__title">
-					{name || "Nike Joggers"}
-				</div>
-
-				<div className="card-cont--sub-cont__subtitle">
-					{subtitle || "Green and Red Hoodie"}
-				</div>
-
+				<div className="card-cont--sub-cont__title">{name}</div>
+				<div className="card-cont--sub-cont__subtitle">{subtitle}</div>
 				<div className="card-cont--sub-cont__price">
 					&#x20A6;
-					{new Intl.NumberFormat().format(
-						Number(parseFloat(price || `50000`).toFixed(2))
-					)}
+					{new Intl.NumberFormat().format(Number(parseFloat(price).toFixed(2)))}
 				</div>
 			</div>
 

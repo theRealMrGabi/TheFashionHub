@@ -1,7 +1,12 @@
 import { FC } from "react";
 import { Like, Cancel } from "icons";
 import { Button } from "./Button";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import {
+	ClearItemFromcart,
+	AddItemsTocart,
+	ReduceItemsFromcart,
+} from "actions";
 
 type Props = {
 	product?: any;
@@ -13,6 +18,16 @@ type SummaryProps = {
 
 export const CartHolder: FC<Props> = ({ product }) => {
 	const { name, subtitle, quantity, price, image } = product;
+
+	const dispatch = useDispatch();
+	const addItemsTocart = AddItemsTocart();
+	const removeItem = ClearItemFromcart();
+	const reduceItem = ReduceItemsFromcart();
+
+	const handleAddItems = () => dispatch(addItemsTocart(product));
+	const handleReduceItems = () => dispatch(reduceItem(product));
+	const handleRemove = () => dispatch(removeItem(product));
+
 	return (
 		<div className="cart cont w-6/12 md:w-full flex flex-row grey-border my-2">
 			<div className="image hidden md:block">
@@ -35,8 +50,23 @@ export const CartHolder: FC<Props> = ({ product }) => {
 				</div>
 
 				<div className="flex flex-col">
-					<p className="font-light text-sm">Quantity</p>
-					<p className="font-normal text-base">{quantity}</p>
+					<p className="font-light text-sm mb-2">Quantity</p>
+
+					<div className="flex justify-between my-auto qty">
+						<div
+							className="cursor-pointer flex justify-center first"
+							onClick={() => handleReduceItems()}
+						>
+							-
+						</div>
+						<div>{quantity}</div>
+						<div
+							className="cursor-pointer flex justify-center third"
+							onClick={() => handleAddItems()}
+						>
+							+
+						</div>
+					</div>
 				</div>
 
 				<div className="flex flex-row items-center cursor-pointer pb-4">
@@ -49,7 +79,7 @@ export const CartHolder: FC<Props> = ({ product }) => {
 				</div>
 			</div>
 
-			<div className="pt-4 pr-4 hidden md:block">
+			<div className="pt-4 pr-4 hidden md:block" onClick={() => handleRemove()}>
 				<Cancel size="w-4 h-4" />
 			</div>
 
@@ -61,7 +91,9 @@ export const CartHolder: FC<Props> = ({ product }) => {
 				<div className="w-3/6 p-4">
 					<div className="flex flex-row justify-between">
 						<h4 className="font-bold text-sm">{name || "Nike"}</h4>
-						<Cancel size="w-4 h-4" />
+						<div onClick={() => handleRemove()}>
+							<Cancel size="w-4 h-4" />
+						</div>
 					</div>
 
 					<div className="font-light text-sm pt-2">{subtitle}</div>
@@ -78,12 +110,12 @@ export const CartHolder: FC<Props> = ({ product }) => {
 						Quantity: <span className="font-normal text-base">{quantity}</span>
 					</p>
 
-					<div className="flex flex-row items-center cursor-pointer pb-4 pt-2">
+					{/* <div className="flex flex-row items-center cursor-pointer pb-4 pt-2">
 						<span className="like pr-2">
 							<Like size="w-4 h-4" />
 						</span>
 						<span className="under font-light text-sm">Move to Wishlist</span>
-					</div>
+					</div> */}
 				</div>
 			</div>
 			{/* Cart mobile View End */}
@@ -93,6 +125,18 @@ export const CartHolder: FC<Props> = ({ product }) => {
 
 export const CartSummary: FC<SummaryProps> = ({ type }) => {
 	const { cart } = useSelector((state: any) => state.cart);
+
+	const price =
+		cart
+			?.reduce(
+				(accumulatedQty: any, cartItem: any) =>
+					accumulatedQty + cartItem.quantity * cartItem.price,
+				0
+			)
+			.toFixed(2) || 0.0;
+
+	const shippingFee = (price - price * 0.95).toFixed(2) || 0.0;
+	const totalPrice = Number(price) + Number(shippingFee);
 
 	return (
 		<div
@@ -111,18 +155,24 @@ export const CartSummary: FC<SummaryProps> = ({ type }) => {
 
 			<div className="summary-item">
 				<span>Total Amount</span>
-				<span className="font-bold text-primary-100">&#8358;500</span>
+				<span className="font-bold text-primary-100">
+					&#8358;{new Intl.NumberFormat().format(price) || 0.0}
+				</span>
 			</div>
 
 			<div className="summary-item">
 				<span>Shipping Fee</span>
-				<span>&#8358;75</span>
+				<span>
+					&#8358; {new Intl.NumberFormat().format(Number(shippingFee)) || 0.0}
+				</span>
 			</div>
 
 			<hr />
 			<div className="summary-item my-1">
 				<span>Total</span>
-				<span className="font-bold text-primary-100">&#8358;575</span>
+				<span className="font-bold text-primary-100">
+					&#8358; {new Intl.NumberFormat().format(totalPrice) || 0.0}
+				</span>
 			</div>
 
 			<Button type="primary" text="Checkout" className="w-full" />

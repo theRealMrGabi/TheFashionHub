@@ -18,8 +18,6 @@ const SingleProduct: FC<RouteComponentProps> = (props: any) => {
 	const { loading, product, products } = useSelector(
 		(state: any) => state.products
 	);
-	const { cart } = useSelector((state: any) => state.cart);
-	console.log("item added to cart --->", cart);
 
 	useEffect(() => {
 		if (id === "undefined") return history.push("/products");
@@ -58,7 +56,7 @@ const SingleProduct: FC<RouteComponentProps> = (props: any) => {
 									&#x20A6;
 									{new Intl.NumberFormat().format(
 										Number(parseFloat(product?.price).toFixed(2))
-									)}
+									) || 0.0}
 								</span>
 							</p>
 
