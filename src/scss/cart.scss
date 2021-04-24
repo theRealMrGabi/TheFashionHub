@@ -46,7 +46,11 @@
 			}
 		}
 
-		@include screen("medium") {
+		.mbcart {
+			max-height: 12rem;
+		}
+
+		@include maxScreen("medium") {
 			width: 100%;
 		}
 	}

@@ -93,3 +93,15 @@ img {
 		color: $primary-grey;
 	}
 }
+
+.cart-qty {
+	position: absolute;
+	top: -0.6rem;
+	right: -1rem;
+	font-size: 0.7rem;
+	font-weight: 500;
+	border-radius: 50%;
+	background: $primary-500;
+	padding: 0.2rem;
+	margin: -0.3rem;
+}

@@ -29,27 +29,24 @@
 		width: 100%;
 		.img-holder {
 			width: 50%;
-			justify-content: center;
 
 			img {
 				width: 31rem;
 				height: 31rem;
 			}
 
-			@include screen("medium") {
+			@include maxScreen("medium") {
 				width: 100%;
-
-				@media screen and (max-width: 425px) {
-					img {
-						width: 20rem;
-						height: 20rem;
-					}
+				img {
+					width: 100%;
+					height: 100%;
 				}
 			}
 		}
 
 		.details-holder {
-			width: 100%;
+			width: 50%;
+			max-width: 100%;
 			h3 {
 				font-weight: 600;
 				font-size: 3.5rem;
@@ -89,6 +86,10 @@
 				font-size: 0.8rem;
 				line-height: 1.39rem;
 				color: $secondary-black;
+			}
+
+			@include maxScreen("medium") {
+				width: 100%;
 			}
 		}
 	}

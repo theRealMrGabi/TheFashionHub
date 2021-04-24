@@ -41,12 +41,12 @@ const SingleProduct: FC<RouteComponentProps> = (props: any) => {
 				<Loader />
 			) : (
 				<div className="flex flex-col single-product">
-					<div className="flex flex-col md:flex-row justify-between top mb-8">
-						<div className="flex flex-col md:flex-row justify-center img-holder mb-4 md:mb-0 mx-auto">
+					<div className="flex flex-col md:flex-row justify-between top mb-8 w-full">
+						<div className="w-full md:w-6/12  img-holder mb-4 md:mb-0 mx-auto">
 							<img src={product?.image?.[0]} alt={product?.name} />
 						</div>
 
-						<div className="flex flex-col details-holder sm:mx-0 md:mx-16 md:px-4">
+						<div className="w-full md:w-6/12 flex flex-col details-holder sm:mx-0 md:mx-16 md:px-4">
 							<h3 className="my-1">{product?.name}</h3>
 							<p className="title-desc my-1">{product?.subtitle}</p>
 							<p className="color my-1">

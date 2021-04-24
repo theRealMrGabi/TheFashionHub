@@ -1,11 +1,15 @@
 import { useState, FC } from "react";
-import { NavLink } from "react-router-dom";
-import { CartIcon, Logo, Hamburger, Like, HumanPlus } from "icons";
+import { NavLink, useHistory } from "react-router-dom";
+import { Logo, Hamburger, Like, HumanPlus, Cart } from "icons";
 import { Input } from "components";
+import { useSelector } from "react-redux";
 
 export const Navbar: FC = () => {
+	const { cart } = useSelector((state: any) => state.cart);
+
 	const [toggle, setToggle] = useState<boolean>(false);
 
+	const history = useHistory();
 	const handleToggle = () => setToggle(!toggle);
 
 	return (
@@ -18,8 +22,14 @@ export const Navbar: FC = () => {
 					</div>
 
 					<div className="w-1/12 flex flex-row justify-evenly items-center">
-						<NavLink to="/cart" className="cursor-pointer " title="Cart Items">
-							<CartIcon />
+						<NavLink
+							to="/cart"
+							className="cursor-pointer relative"
+							title="Cart Items"
+						>
+							{cart && <div className="cart-qty">{cart?.length}</div>}
+							{/* <div className="cart-qty">{cart?.length}</div> */}
+							<Cart />
 						</NavLink>
 
 						<NavLink
@@ -56,8 +66,11 @@ export const Navbar: FC = () => {
 				<div>
 					<Logo />
 				</div>
-				<div>
-					<CartIcon />
+
+				<div onClick={() => history.push("/cart")} className="relative">
+					{/* <div className="cart-qty">99</div> */}
+					{cart && <div className="cart-qty">{cart?.length}</div>}
+					<Cart />
 				</div>
 			</div>
 

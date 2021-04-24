@@ -1,19 +1,20 @@
 import { FC } from "react";
-import {
-	// Button,
-	CartHolder,
-	ProductPageProducts,
-	CartSummary,
-} from "components";
+import { CartHolder, CartSummary } from "components";
 import { useHistory } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Cart: FC = () => {
+	const { cart } = useSelector((state: any) => state.cart);
+	console.log("item added to cart --->", cart);
+
 	const history = useHistory();
 	return (
 		<div className="cart mb-8">
 			<div className="w-full">
 				<div className="flex mb-8">
-					<h3 className="title font-semibold text-xl">Cart (5)</h3>
+					<h3 className="title font-semibold text-xl">
+						Cart ({cart?.length || 0})
+					</h3>
 					<div
 						className="continue font-normal hidden md:block text-sm under"
 						onClick={() => history.push("/products")}
@@ -24,16 +25,10 @@ const Cart: FC = () => {
 
 				<div className="flex md:flex-row flex-col-reverse items-start">
 					<div className="flex flex-col w-full md:w-4/5 mr-4">
-						{ProductPageProducts?.map((product: any, i: number) => {
-							const { Title, SubTitle, Price, image } = product;
+						{cart?.map((product: any) => {
 							return (
-								<div key={i}>
-									<CartHolder
-										Title={Title}
-										SubTitle={SubTitle}
-										Price={Price}
-										image={image}
-									/>
+								<div key={product?._id}>
+									<CartHolder product={product} />
 								</div>
 							);
 						})}
