@@ -28,7 +28,6 @@ export const Navbar: FC = () => {
 							title="Cart Items"
 						>
 							{cart && <div className="cart-qty">{cart?.length}</div>}
-							{/* <div className="cart-qty">{cart?.length}</div> */}
 							<Cart />
 						</NavLink>
 
@@ -59,7 +58,7 @@ export const Navbar: FC = () => {
 			<div className="flex md:hidden justify-between items-center">
 				<div>
 					{/* <LikeIcon /> */}
-					<div onClick={() => handleToggle()} className="">
+					<div onClick={() => handleToggle()}>
 						<Hamburger />
 					</div>
 				</div>
@@ -68,7 +67,6 @@ export const Navbar: FC = () => {
 				</div>
 
 				<div onClick={() => history.push("/cart")} className="relative">
-					{/* <div className="cart-qty">99</div> */}
 					{cart && <div className="cart-qty">{cart?.length}</div>}
 					<Cart />
 				</div>
@@ -77,7 +75,7 @@ export const Navbar: FC = () => {
 			{/* Nav Links */}
 
 			<nav
-				className={` ${toggle ? "small-nav " : "hidden "} md:block`}
+				className={` ${toggle ? "small-nav" : "hidden "} md:block`}
 				onClick={() => handleToggle()}
 			>
 				<div

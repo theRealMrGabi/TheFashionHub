@@ -27,13 +27,13 @@ export const ProductList: FC = () => {
 			{/* <SelectRadio category="Brands" selectData={data} /> */}
 			{/* </div> */}
 
-			{/* <div className="w-9/12 cards flex flex-col-reverse md:flex-row items-center flex-wrap justify-between mx-auto md:mx-0"> */}
+			{/* <div className="w-9/12 flex flex-col-reverse md:flex-row items-center flex-wrap justify-between mx-auto md:mx-0"> */}
 			{loading ? (
 				<div className="mx-auto">
 					<Loader />
 				</div>
 			) : (
-				<div className="cards flex flex-col-reverse md:flex-row items-center flex-wrap justify-between mx-auto md:mx-0">
+				<div className="flex flex-col-reverse md:flex-row items-center flex-wrap justify-between mx-auto md:mx-0">
 					{filteredProduct?.map((product: any) => (
 						<div key={product?._id}>
 							<Card product={product} />

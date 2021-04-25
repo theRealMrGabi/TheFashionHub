@@ -5,7 +5,7 @@
 ## App URL
 
 This App is hosted on surge and below is the link.
-[TheFashionHub](https://www.thefashionhub.surge.sh)
+[TheFashionHub](https://thefashionhub.netlify.app/)
 
 ## Technologies
 

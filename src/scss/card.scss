@@ -8,12 +8,9 @@
 	padding: 0;
 	overflow: hidden;
 	cursor: pointer;
+	margin-bottom: 2rem;
 	border-radius: 0.5rem;
 	font-family: "Circe", serif;
-
-	@include screen("medium") {
-		margin-bottom: 2rem;
-	}
 
 	&:hover {
 		box-shadow: 0 10px 15px rgb(226, 222, 222);

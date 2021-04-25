@@ -78,3 +78,26 @@ export const EmptyCart = () => {
 		successCallback?.();
 	};
 };
+
+export const LikeAndUnlikeProduct = () => {
+	return (itemToLike: any) => (dispatch: Dispatch, getState: any) => {
+		let payload;
+		const state = getState();
+		const { like } = state.cart;
+
+		const existingLikedProduct = like?.find(
+			(item: any) => item._id === itemToLike._id
+		);
+
+		if (existingLikedProduct) {
+			payload = like?.filter((item: any) => item._id !== itemToLike._id);
+			showToast("Product unliked", "info");
+		} else {
+			payload = [...like, { ...itemToLike, like: true }];
+			showToast("Product liked", "info");
+		}
+
+		localStorage.setItem("like", JSON.stringify(payload));
+		return dispatch({ type: types.LIKE_PRODUCT, payload });
+	};
+};

@@ -3,13 +3,15 @@ import { FC } from "react";
 type Props = {
 	card?: boolean;
 	size?: string;
+	liked?: boolean;
 };
 
-export const Like: FC<Props> = ({ size }) => {
+export const Like: FC<Props> = ({ size, liked }) => {
 	return (
 		<svg
 			className={`like-icon ${!size ? `w-6 h-6` : size}`}
-			fill="none"
+			// fill="none"
+			fill={`${liked ? "red" : "none"}`}
 			stroke="currentColor"
 			viewBox="0 0 24 24"
 			xmlns="http://www.w3.org/2000/svg"

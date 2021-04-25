@@ -1,10 +1,12 @@
 import * as types from "../actions/types";
 
-const data: any = localStorage.getItem("cart");
+const cart: any = localStorage.getItem("cart");
+const like: any = localStorage.getItem("like");
 
 const initialState = {
-	cart: JSON.parse(data) || [],
+	cart: JSON.parse(cart) || [],
 	likes: 0,
+	like: JSON.parse(like) || [],
 };
 
 const CartReducer = (state = initialState, { type, payload }: any) => {
@@ -16,6 +18,9 @@ const CartReducer = (state = initialState, { type, payload }: any) => {
 
 		case types.EMPTY_CART:
 			return { ...state, cart: [] };
+
+		case types.LIKE_PRODUCT:
+			return { ...state, like: payload };
 
 		default:
 			return state;
