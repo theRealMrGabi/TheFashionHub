@@ -7,7 +7,6 @@ type Props = {
 export const Cancel: FC<Props> = ({ size }) => {
 	return (
 		<svg
-			// className="w-6 h-6"
 			className={`like-icon cursor-pointer ${!size ? `w-6 h-6` : size}`}
 			xmlns="http://www.w3.org/2000/svg"
 			fill="none"

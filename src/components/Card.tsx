@@ -1,9 +1,9 @@
 import { FC } from "react";
-import { Like, Cancel, Cart } from "icons";
+import { Cancel, Cart } from "icons";
 import { Button } from "./Button";
 import { useHistory } from "react-router-dom";
 import { AddItemsTocart } from "actions";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 type Props = {
 	type?: string;
@@ -17,19 +17,20 @@ export const Card: FC<Props> = ({ type, product }) => {
 
 	const { name, subtitle, _id: id, price, image } = product;
 
+	const { cart } = useSelector((state: any) => state.cart);
+
+	const addedToCart = cart?.find((item: any) => item._id === id);
+
 	return (
 		<div className="card-cont">
-			<div
-				className="flex justify-center card"
-				// onClick={() => history.push(`/products/${id}`)}
-			>
+			<div className="flex justify-center card">
 				<img src={image} alt={subtitle} className="img" />
 
-				{!type && (
+				{/* {!type && (
 					<div className="like">
 						<Like />
 					</div>
-				)}
+				)} */}
 
 				{type === "wish" && (
 					<div className="like">
@@ -38,11 +39,14 @@ export const Card: FC<Props> = ({ type, product }) => {
 				)}
 
 				{!type && (
-					<div
-						className="cart"
-						onClick={() => dispatch(addItemsTocart(product))}
-					>
-						<Cart />
+					<div className="cart">
+						{addedToCart ? (
+							<div className="font-bold">In Cart</div>
+						) : (
+							<div onClick={() => dispatch(addItemsTocart(product))}>
+								<Cart />
+							</div>
+						)}
 					</div>
 				)}
 			</div>
@@ -65,6 +69,7 @@ export const Card: FC<Props> = ({ type, product }) => {
 						text="Add to Cart"
 						type="secondary"
 						className="w-full mx-auto"
+						onClick={() => dispatch(addItemsTocart(product))}
 					/>
 				)}
 			</div>

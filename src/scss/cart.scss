@@ -62,12 +62,34 @@
 			}
 		}
 
-		.mbcart {
-			max-height: 12rem;
-		}
-
 		@include maxScreen("medium") {
 			width: 100%;
+			height: 15rem;
+
+			.cart-mobile {
+				.img-cont {
+					img {
+						height: 100%;
+					}
+				}
+
+				.details {
+					.cart-title {
+						overflow: hidden;
+						text-overflow: ellipsis;
+						display: -webkit-box;
+						-webkit-line-clamp: 2; /* number of lines to show */
+						-webkit-box-orient: vertical;
+					}
+					.subtitle {
+						overflow: hidden;
+						text-overflow: ellipsis;
+						display: -webkit-box;
+						-webkit-line-clamp: 2; /* number of lines to show */
+						-webkit-box-orient: vertical;
+					}
+				}
+			}
 		}
 	}
 

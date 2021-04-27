@@ -1,6 +1,6 @@
 import { useState, FC } from "react";
 import { NavLink, useHistory } from "react-router-dom";
-import { Logo, Hamburger, Like, HumanPlus, Cart } from "icons";
+import { Logo, Hamburger, Cart } from "icons";
 import { Input } from "components";
 import { useSelector } from "react-redux";
 
@@ -28,28 +28,28 @@ export const Navbar: FC = () => {
 							title="Cart Items"
 						>
 							{cart && <div className="cart-qty">{cart?.length}</div>}
-							{/* <div className="cart-qty">{cart?.length}</div> */}
 							<Cart />
 						</NavLink>
 
-						<NavLink
+						{/* <NavLink
 							to="/wishlist"
 							className="cursor-pointer "
 							title="Liked Items"
 						>
 							<Like />
-						</NavLink>
+						</NavLink> */}
 
 						{/* <span className="cursor-pointer">
 								<Human />
 							</span> */}
-						<NavLink
+
+						{/* <NavLink
 							to="/register"
 							className="cursor-pointer"
 							title="Login/Register"
 						>
 							<HumanPlus />
-						</NavLink>
+						</NavLink> */}
 					</div>
 				</div>
 			</div>
@@ -59,7 +59,7 @@ export const Navbar: FC = () => {
 			<div className="flex md:hidden justify-between items-center">
 				<div>
 					{/* <LikeIcon /> */}
-					<div onClick={() => handleToggle()} className="">
+					<div onClick={() => handleToggle()}>
 						<Hamburger />
 					</div>
 				</div>
@@ -68,7 +68,6 @@ export const Navbar: FC = () => {
 				</div>
 
 				<div onClick={() => history.push("/cart")} className="relative">
-					{/* <div className="cart-qty">99</div> */}
 					{cart && <div className="cart-qty">{cart?.length}</div>}
 					<Cart />
 				</div>
@@ -77,7 +76,7 @@ export const Navbar: FC = () => {
 			{/* Nav Links */}
 
 			<nav
-				className={` ${toggle ? "small-nav " : "hidden "} md:block`}
+				className={` ${toggle ? "small-nav" : "hidden "} md:block`}
 				onClick={() => handleToggle()}
 			>
 				<div
@@ -116,13 +115,13 @@ export const Navbar: FC = () => {
 							Accessories
 						</NavLink>
 
-						<NavLink
+						{/* <NavLink
 							className="hover-animate navlink md:hidden mb-4 md:mb-0"
 							activeStyle={{ color: "#2d4059" }}
 							to="/login"
 						>
 							Login
-						</NavLink>
+						</NavLink> */}
 					</div>
 
 					<div className="hidden md:flex md:w-6/12 md:justify-end md:items-center ">

@@ -1,11 +1,11 @@
 # TheFashionHub - ClientSide
 
-> An E-commerce app built with React and TypeScript. A very intuiutive and sleek UI, modern programming practice was used in the development of this project.
+> An E-commerce app built with React and TypeScript which fetches data from a REST API.
 
 ## App URL
 
-This App is hosted on surge and below is the link.
-[TheFashionHub](https://www.thefashionhub.surge.sh)
+This project is hosted on Netlify and below is the live URL.
+[TheFashionHub](https://thefashionhub.netlify.app/)
 
 ## Technologies
 

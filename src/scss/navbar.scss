@@ -35,10 +35,12 @@
 	}
 }
 
-.small-nav {
-	background: $grayWhite;
-	color: $primary-black;
-	animation: slideDown 1.5s ease-in-out;
+@include maxScreen("medium") {
+	.small-nav {
+		background: $grayWhite;
+		color: $primary-black;
+		animation: slideDown 1s ease-in-out;
+	}
 }
 
 @keyframes slideDown {
@@ -49,7 +51,8 @@
 	}
 	to {
 		margin-top: 0;
-		height: 27vh;
+		// height: 27vh;
+		height: 20vh;
 		overflow-y: hidden;
 	}
 }
