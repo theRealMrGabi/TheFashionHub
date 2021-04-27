@@ -84,31 +84,31 @@ export const CartHolder: FC<Props> = ({ product }) => {
 			</div>
 
 			{/* Cart mobile View Start */}
-			<div className="flex flex-row md:hidden w-full">
-				<div className="w-3/6 p-4">
-					<img src={image} alt={name} className="mbcart" />
+			<div className="flex flex-row md:hidden w-full cart-mobile">
+				<div className="w-3/6 p-4 img-cont">
+					<img src={image} alt={name} />
 				</div>
-				<div className="w-3/6 p-4">
+				<div className="w-3/6 p-4 details">
 					<div className="flex flex-row justify-between">
-						<h4 className="font-bold text-sm">{name || "Nike"}</h4>
+						<h4 className="font-bold text-sm cart-title">{name}</h4>
 						<div onClick={() => handleRemove()}>
 							<Cancel size="w-4 h-4" />
 						</div>
 					</div>
 
-					<div className="font-light text-sm pt-2">{subtitle}</div>
+					<div className="font-light text-sm pt-2 subtitle">{subtitle}</div>
 
-					<div className="text-sm font-light pt-2">
+					<div className="text-sm font-light pt-1">
 						Price: <span className="font-bold text-sm">&#8358;{price}</span>
 					</div>
 
-					<p className="text-sm font-light pt-2">
+					<p className="text-sm font-light pt-1">
 						Size: <span className="font-normal text-base">L</span>
 					</p>
 
-					<p className="text-sm font-light pt-2">
+					{/* <p className="text-sm font-light pt-2">
 						Quantity: <span className="font-normal text-base">{quantity}</span>
-					</p>
+					</p> */}
 
 					{/* <div className="flex flex-row items-center cursor-pointer pb-4 pt-2">
 						<span className="like pr-2">
@@ -116,6 +116,26 @@ export const CartHolder: FC<Props> = ({ product }) => {
 						</span>
 						<span className="under font-light text-sm">Move to Wishlist</span>
 					</div> */}
+
+					<div className="flex flex-col pt-1">
+						<p className="font-light text-sm mb-2">Quantity</p>
+
+						<div className="flex justify-between my-auto qty">
+							<div
+								className="cursor-pointer flex justify-center first"
+								onClick={() => handleReduceItems()}
+							>
+								-
+							</div>
+							<div>{quantity}</div>
+							<div
+								className="cursor-pointer flex justify-center third"
+								onClick={() => handleAddItems()}
+							>
+								+
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 			{/* Cart mobile View End */}

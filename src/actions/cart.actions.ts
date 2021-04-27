@@ -79,25 +79,34 @@ export const EmptyCart = () => {
 	};
 };
 
-export const LikeAndUnlikeProduct = () => {
-	return (itemToLike: any) => (dispatch: Dispatch, getState: any) => {
-		let payload;
-		const state = getState();
-		const { like } = state.cart;
+// export const LikeAndUnlikeProduct = () => {
+// 	return (itemToLike: any) => (dispatch: Dispatch, getState: any) => {
+// 		let payload;
+// 		const state = getState();
+// 		const { cart } = state.cart;
 
-		const existingLikedProduct = like?.find(
-			(item: any) => item._id === itemToLike._id
-		);
+/**
+ * 1. find existing product with same id
+ * 2. find already liked product with same id
+ * 3. if (1) exist but not already liked, add like is true
+ * 4. if (2) exist, remove like from product
+ */
 
-		if (existingLikedProduct) {
-			payload = like?.filter((item: any) => item._id !== itemToLike._id);
-			showToast("Product unliked", "info");
-		} else {
-			payload = [...like, { ...itemToLike, like: true }];
-			showToast("Product liked", "info");
-		}
+// 		const existingLikedProduct = cart?.find(
+// 			(item: any) => item._id === itemToLike._id && item.like === true
+// 		);
 
-		localStorage.setItem("like", JSON.stringify(payload));
-		return dispatch({ type: types.LIKE_PRODUCT, payload });
-	};
-};
+// 		if (existingLikedProduct) {
+// 			payload = cart?.map((item: any) =>
+// 				item._id !== itemToLike._id ? { ...item, like: null } : { ...item }
+// 			);
+// 			showToast("Product unliked", "info");
+// 		} else {
+// 			payload = [...cart, { ...itemToLike, like: true }];
+// 			showToast("Product liked", "info");
+// 		}
+
+// 		localStorage.setItem("cart", JSON.stringify(payload));
+// 		return dispatch({ type: types.LIKE_PRODUCT, payload });
+// 	};
+// };

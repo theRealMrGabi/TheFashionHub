@@ -4,21 +4,14 @@ import { AuthLayout, GeneralLayout, Loader, NotFound } from "components";
 
 const Home = lazy(() => import("screens/home/Home"));
 const Accessories = lazy(() => import("screens/accessories/Accessories"));
-const About = lazy(() => import("screens/about/About"));
-const Advertising = lazy(() => import("screens/advertising/Advertising"));
-const Careers = lazy(() => import("screens/careers/Careers"));
 const Cart = lazy(() => import("screens/cart/Cart"));
 const Checkout = lazy(() => import("screens/checkout/Checkout"));
-const Contact = lazy(() => import("screens/contact/Contact"));
-const Faq = lazy(() => import("screens/faq/Faq"));
-const Login = lazy(() => import("screens/auth/Login"));
+// const Login = lazy(() => import("screens/auth/Login"));
 const Men = lazy(() => import("screens/men/Men"));
 const Products = lazy(() => import("screens/product/Products"));
-const Signup = lazy(() => import("screens/auth/Signup"));
+// const Signup = lazy(() => import("screens/auth/Signup"));
 const SingleProduct = lazy(() => import("screens/product/SingleProduct"));
-const StyleAdvice = lazy(() => import("screens/styleAdvice/StyleAdvice"));
-const Terms = lazy(() => import("screens/terms/Terms"));
-const Wishlist = lazy(() => import("screens/wishlist/Wishlist"));
+// const Wishlist = lazy(() => import("screens/wishlist/Wishlist"));
 const Women = lazy(() => import("screens/women/Women"));
 
 const App: FC = () => {
@@ -36,41 +29,11 @@ const App: FC = () => {
 				/>
 
 				<Route
-					path="/about"
-					exact
-					render={(props) => (
-						<GeneralLayout {...props}>
-							<About />
-						</GeneralLayout>
-					)}
-				/>
-
-				<Route
 					path="/accessories"
 					exact
 					render={(props) => (
 						<GeneralLayout {...props}>
 							<Accessories />
-						</GeneralLayout>
-					)}
-				/>
-
-				<Route
-					path="/advert"
-					exact
-					render={(props) => (
-						<GeneralLayout {...props}>
-							<Advertising />
-						</GeneralLayout>
-					)}
-				/>
-
-				<Route
-					path="/careers"
-					exact
-					render={(props) => (
-						<GeneralLayout {...props}>
-							<Careers />
 						</GeneralLayout>
 					)}
 				/>
@@ -95,27 +58,7 @@ const App: FC = () => {
 					)}
 				/>
 
-				<Route
-					path="/contact"
-					exact
-					render={(props) => (
-						<GeneralLayout {...props}>
-							<Contact />
-						</GeneralLayout>
-					)}
-				/>
-
-				<Route
-					path="/faq"
-					exact
-					render={(props) => (
-						<GeneralLayout {...props}>
-							<Faq />
-						</GeneralLayout>
-					)}
-				/>
-
-				<Route
+				{/* <Route
 					path="/login"
 					exact
 					render={(props) => (
@@ -123,7 +66,7 @@ const App: FC = () => {
 							<Login />
 						</GeneralLayout>
 					)}
-				/>
+				/> */}
 
 				<Route
 					path="/men"
@@ -155,7 +98,7 @@ const App: FC = () => {
 					)}
 				/>
 
-				<Route
+				{/* <Route
 					path="/register"
 					exact
 					render={(props) => (
@@ -163,29 +106,9 @@ const App: FC = () => {
 							<Signup />
 						</GeneralLayout>
 					)}
-				/>
+				/> */}
 
-				<Route
-					path="/style-advice"
-					exact
-					render={(props) => (
-						<GeneralLayout {...props}>
-							<StyleAdvice />
-						</GeneralLayout>
-					)}
-				/>
-
-				<Route
-					path="/terms"
-					exact
-					render={(props) => (
-						<GeneralLayout {...props}>
-							<Terms />
-						</GeneralLayout>
-					)}
-				/>
-
-				<Route
+				{/* <Route
 					path="/wishlist"
 					exact
 					render={(props) => (
@@ -193,7 +116,7 @@ const App: FC = () => {
 							<Wishlist />
 						</GeneralLayout>
 					)}
-				/>
+				/> */}
 
 				<Route
 					path="/women"

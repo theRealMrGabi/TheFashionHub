@@ -11,19 +11,19 @@ export const Footer: FC = () => {
 						COMPANY
 					</h4>
 
-					<Link className="hover-animate footer-link" to="/about">
+					<Link className="hover-animate footer-link" to="#">
 						About Us
 					</Link>
 
-					<Link className="footer-link  hover-animate" to="/careers">
+					<Link className="footer-link  hover-animate" to="#">
 						Careers
 					</Link>
 
-					<Link className="footer-link hover-animate" to="/advert">
+					<Link className="footer-link hover-animate" to="#">
 						Advertising
 					</Link>
 
-					<Link className="footer-link hover-animate" to="/terms">
+					<Link className="footer-link hover-animate" to="#">
 						Terms and Conditions
 					</Link>
 				</div>
@@ -33,15 +33,15 @@ export const Footer: FC = () => {
 						CUSTOMER SERVICES
 					</h4>
 
-					<Link className="footer-link  hover-animate" to="/faq">
+					<Link className="footer-link  hover-animate" to="#">
 						FAQ's
 					</Link>
 
-					<Link className="footer-link  hover-animate" to="/contact">
+					<Link className="footer-link  hover-animate" to="#">
 						Contact Us
 					</Link>
 
-					<Link className="footer-link  hover-animate" to="/style-advice">
+					<Link className="footer-link  hover-animate" to="#">
 						Style and Fit Advice
 					</Link>
 				</div>

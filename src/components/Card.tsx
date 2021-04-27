@@ -1,8 +1,8 @@
 import { FC } from "react";
-import { Like, Cancel, Cart } from "icons";
+import { Cancel, Cart } from "icons";
 import { Button } from "./Button";
 import { useHistory } from "react-router-dom";
-import { AddItemsTocart, LikeAndUnlikeProduct } from "actions";
+import { AddItemsTocart } from "actions";
 import { useDispatch, useSelector } from "react-redux";
 
 type Props = {
@@ -14,41 +14,39 @@ export const Card: FC<Props> = ({ type, product }) => {
 	const history = useHistory();
 	const dispatch = useDispatch();
 	const addItemsTocart = AddItemsTocart();
-	const likeAndUnlike = LikeAndUnlikeProduct();
-
-	const handleLikes = () => dispatch(likeAndUnlike(product));
 
 	const { name, subtitle, _id: id, price, image } = product;
 
-	const { like } = useSelector((state: any) => state.cart);
-	console.log("liked items ---->", like);
-	console.log("cart products --->", product);
+	const { cart } = useSelector((state: any) => state.cart);
 
-	// console.log("liked items length---->", like?.length);
+	const addedToCart = cart?.find((item: any) => item._id === id);
 
 	return (
 		<div className="card-cont">
 			<div className="flex justify-center card">
 				<img src={image} alt={subtitle} className="img" />
 
-				{!type && (
-					<div className="like" onClick={() => handleLikes()}>
-						<Like liked={like?.like} />
+				{/* {!type && (
+					<div className="like">
+						<Like />
 					</div>
-				)}
+				)} */}
 
 				{type === "wish" && (
-					<div className="like" onClick={() => handleLikes()}>
+					<div className="like">
 						<Cancel />
 					</div>
 				)}
 
 				{!type && (
-					<div
-						className="cart"
-						onClick={() => dispatch(addItemsTocart(product))}
-					>
-						<Cart />
+					<div className="cart">
+						{addedToCart ? (
+							<div className="font-bold">In Cart</div>
+						) : (
+							<div onClick={() => dispatch(addItemsTocart(product))}>
+								<Cart />
+							</div>
+						)}
 					</div>
 				)}
 			</div>
