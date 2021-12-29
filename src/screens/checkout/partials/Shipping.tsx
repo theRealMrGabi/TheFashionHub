@@ -18,7 +18,7 @@ export const ShippingCheckout: FC = () => {
 
 				<Input label="House Address *" placeholder="Enter house address" />
 
-				<Button text="Save & Continue" type="primary" className="w-full" />
+				<Button text="Save & Continue" btnType="primary" className="w-full" />
 			</form>
 		</div>
 	);

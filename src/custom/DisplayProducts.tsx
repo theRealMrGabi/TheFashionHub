@@ -30,7 +30,8 @@ export const DisplayProducts: FC<Props> = ({ category }) => {
 					<Loader />
 				</div>
 			) : (
-				<div className="flex flex-col-reverse md:flex-row items-center flex-wrap justify-between mx-auto md:mx-0">
+				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mx-auto gap-x-14">
+					{/* <div className="flex flex-col-reverse md:flex-row items-center flex-wrap justify-between mx-auto md:mx-0"> */}
 					{filteredProduct?.map((product: any) => (
 						<div key={product?._id}>
 							<Card product={product} />

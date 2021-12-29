@@ -8,7 +8,6 @@ import axios, {
 	AxiosInstance,
 } from "axios";
 import { getToken, callbackToast, showToast } from "utils";
-import { local, session } from "./storage";
 
 let that: any;
 
@@ -34,7 +33,7 @@ class ApiService {
 
 			if (!token) return config;
 
-			config.headers["Authorization"] = "Bearer " + token;
+			config.headers!["Authorization"] = "Bearer " + token;
 			return config;
 		});
 
@@ -53,13 +52,11 @@ class ApiService {
 		if (error?.response === undefined)
 			showToast("No internet connection", "error");
 		else {
-			// let message = "";
 			const status = error?.response?.status;
-			// message = error?.response?.data?.responseText;
 
 			if (status && status === 401) {
-				local.clear();
-				session.clear();
+				localStorage.clear();
+				sessionStorage.clear();
 				window.location.href = "/login";
 			}
 		}

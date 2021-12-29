@@ -1,15 +1,15 @@
 import { FC } from "react";
 import { Footer, Navbar } from "components";
+import { Outlet } from "react-router-dom";
 
-type Props = {
-	children: any;
-};
-
-export const GeneralLayout: FC<Props> = ({ children }) => {
+export const GeneralLayout: FC = ({ children }) => {
 	return (
 		<>
 			<Navbar />
-			<main className="mx-8 md:mx-16">{children}</main>
+			<main className="mx-4 md:mx-16">
+				<Outlet />
+				{children}
+			</main>
 			<Footer />
 		</>
 	);

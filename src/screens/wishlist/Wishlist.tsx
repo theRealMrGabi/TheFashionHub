@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Card, ProductPageProducts } from "components";
+import { Card } from "components";
 import { useSelector } from "react-redux";
 
 const Wishlist: FC = () => {
