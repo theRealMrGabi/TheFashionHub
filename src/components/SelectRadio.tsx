@@ -2,32 +2,6 @@ import { FC } from "react";
 import { SelectArrow } from "icons";
 import { Radio, RadioGroup } from "@uiw/react-radio";
 
-// const data = [
-// 	{ value: "all", key: "All" },
-// 	{ value: "Nike", key: "Nike" },
-// 	{ value: "Nike", key: "Nike" },
-// 	{ value: "Adidas", key: "Adidas" },
-// 	{ value: "Puma", key: "Puma" },
-// ];
-
-// type Props = {
-// 	visible: boolean;
-// 	category: string;
-// };
-
-// export const Dropdown: FC<Props> = ({ visible, category }) => {
-// 	return (
-// 		<div className="select">
-// 			<hr />
-// 			<div className="flex flex-row justify-between cursor-pointer items-center">
-// 				<h3>{category}</h3>
-// 				<SelectArrow />
-// 			</div>
-// 			{visible && <Select selectData={data} name="Category" />}
-// 		</div>
-// 	);
-// };
-
 type SelectProps = {
 	category: string;
 	selectData?: any;

@@ -7,13 +7,10 @@ import {
 	AddItemsTocart,
 	ReduceItemsFromcart,
 } from "actions";
+import { showToast } from "utils";
 
 type Props = {
 	product?: any;
-};
-
-type SummaryProps = {
-	type?: string;
 };
 
 export const CartHolder: FC<Props> = ({ product }) => {
@@ -143,6 +140,10 @@ export const CartHolder: FC<Props> = ({ product }) => {
 	);
 };
 
+type SummaryProps = {
+	type?: string;
+};
+
 export const CartSummary: FC<SummaryProps> = ({ type }) => {
 	const { cart } = useSelector((state: any) => state.cart);
 
@@ -195,7 +196,17 @@ export const CartSummary: FC<SummaryProps> = ({ type }) => {
 				</span>
 			</div>
 
-			<Button type="primary" text="Checkout" className="w-full" />
+			<Button
+				btnType="primary"
+				text="Checkout"
+				className="w-full"
+				onClick={() =>
+					showToast(
+						"This is a demo app. Can't proceed with further action",
+						"error"
+					)
+				}
+			/>
 		</div>
 	);
 };

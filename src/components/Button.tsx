@@ -1,31 +1,30 @@
 import { FC } from "react";
 import { Spinner } from "components";
 
-type Props = {
+interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	text: string;
-	type: string;
+	btnType: "primary" | "secondary";
 	loading?: boolean;
 	rest?: any;
-	className?: string;
-	onClick?: React.MouseEventHandler<HTMLButtonElement>;
-};
+}
 
 export const Button: FC<Props> = ({
 	text,
 	loading,
 	className,
-	type,
+	btnType,
 	onClick,
 	...rest
 }) => {
 	return (
 		<button
 			onClick={onClick}
-			disabled={loading}
+			disabled={loading || rest.disabled}
 			{...rest}
 			className={`button transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0
-			${type === "primary" && `primary`}
-			${type === "secondary" && `secondary`} ${className}
+			${className}
+			${btnType === "primary" && `primary`}
+			${btnType === "secondary" && `secondary`}
 			${loading && `opacity-100`}
 			`}
 		>

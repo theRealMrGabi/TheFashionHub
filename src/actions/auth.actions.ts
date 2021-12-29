@@ -1,12 +1,11 @@
 import * as types from "./types";
 import axios from "utils/axios";
 import { useDispatch } from "react-redux";
-
-import { showToast, local } from "utils";
-import { useHistory } from "react-router-dom";
+import { showToast } from "utils";
+import { useNavigate } from "react-router-dom";
 
 export const SignUp = () => {
-	const history = useHistory();
+	const navigate = useNavigate();
 	const dispatch = useDispatch();
 
 	return (data: any, successCallback?: any, errorCallback?: any) => (
@@ -19,9 +18,9 @@ export const SignUp = () => {
 				const { token, user } = res.data;
 
 				dispatch({ type: types.SIGNUP.SUCCESS, payload: user });
-				local.set("token", token);
-				local.setObject("user", user);
-				history.push("/");
+				localStorage.setItem("token", token);
+				localStorage.setItem("user", JSON.stringify(user));
+				navigate("/");
 				successCallback?.();
 			},
 			(err: any) => {

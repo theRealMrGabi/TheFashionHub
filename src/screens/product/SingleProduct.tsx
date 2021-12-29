@@ -1,16 +1,24 @@
-import { FC, useEffect } from "react";
-import { RouteComponentProps } from "react-router";
+import { useEffect } from "react";
+// import { RouteComponentProps } from "react-router";
 import { Button, Loader } from "components";
 import { MidHome } from "screens/home/partials";
 import { AddItemsTocart, GetAllProducts, GetSingleProduct } from "actions";
 import { useSelector, useDispatch, batch } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useFilterProducts } from "utils";
 
-const SingleProduct: FC<RouteComponentProps> = (props: any) => {
-	const id = props.match.params.id;
+// const SingleProduct: FC<RouteComponentProps> = (props: any) => {
+// const SingleProduct = (props: any) => {
+const SingleProduct = () => {
+	const params = useParams();
+	console.log("params -->", params);
+
 	const dispatch = useDispatch();
-	const history = useHistory();
+	const navigate = useNavigate();
+	// console.log("navigate -->", navigate);
+
+	// const id = props.match.params.id;
+	const id = params.id || "";
 	const getSingleProduct = GetSingleProduct();
 	const getAllProducts = GetAllProducts();
 	const addItemsTocart = AddItemsTocart();
@@ -20,7 +28,7 @@ const SingleProduct: FC<RouteComponentProps> = (props: any) => {
 	);
 
 	useEffect(() => {
-		if (id === "undefined") return history.push("/products");
+		if (id === "undefined") return navigate("/products");
 		batch(() => {
 			dispatch(getAllProducts());
 			dispatch(getSingleProduct(id));
@@ -64,13 +72,13 @@ const SingleProduct: FC<RouteComponentProps> = (props: any) => {
 								<Button
 									onClick={() => dispatch(addItemsTocart(product))}
 									text="Add to Cart"
-									type="primary"
+									btnType="primary"
 									className="my-6"
 								/>
 
 								<Button
 									text="Add to Wish List"
-									type="secondary"
+									btnType="secondary"
 									className="mb-8"
 								/>
 							</div>

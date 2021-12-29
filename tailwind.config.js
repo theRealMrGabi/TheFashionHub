@@ -1,18 +1,13 @@
 module.exports = {
-	purge: {
-		enabled: process.env.NODE_ENV === "production" ? true : false,
-		content: [
-			"./src/**/*.html",
-			"./src/**/*.tsx",
-			"./src/**/*.jsx",
-			"./src/**/*.ts",
-			"./src/**/*.js",
-		],
-		options: {
-			keyframes: true,
-		},
-	},
-	darkMode: false, // or 'media' or 'class'
+	mode: "jit",
+	content: [
+		"./src/**/*.html",
+		"./src/**/*.tsx",
+		"./src/**/*.jsx",
+		"./src/**/*.ts",
+		"./src/**/*.js",
+	],
+	// darkMode: false, // or 'media' or 'class'
 	theme: {
 		extend: {
 			colors: {

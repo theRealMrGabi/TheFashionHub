@@ -1,8 +1,8 @@
 import { FC } from "react";
 import { Cancel, Cart } from "icons";
 import { Button } from "./Button";
-import { useHistory } from "react-router-dom";
-import { AddItemsTocart } from "actions";
+import { useNavigate } from "react-router-dom";
+import { AddItemsTocart, ReduceItemsFromcart } from "actions";
 import { useDispatch, useSelector } from "react-redux";
 
 type Props = {
@@ -11,9 +11,10 @@ type Props = {
 };
 
 export const Card: FC<Props> = ({ type, product }) => {
-	const history = useHistory();
+	const navigate = useNavigate();
 	const dispatch = useDispatch();
 	const addItemsTocart = AddItemsTocart();
+	const removeItemsFromCart = ReduceItemsFromcart();
 
 	const { name, subtitle, _id: id, price, image } = product;
 
@@ -41,7 +42,12 @@ export const Card: FC<Props> = ({ type, product }) => {
 				{!type && (
 					<div className="cart">
 						{addedToCart ? (
-							<div className="font-bold">In Cart</div>
+							<div
+								className="font-bold"
+								onClick={() => dispatch(removeItemsFromCart(product))}
+							>
+								In Cart
+							</div>
 						) : (
 							<div onClick={() => dispatch(addItemsTocart(product))}>
 								<Cart />
@@ -53,7 +59,7 @@ export const Card: FC<Props> = ({ type, product }) => {
 
 			<div
 				className="bg-white mt-3 flex flex-col card-cont--sub-cont"
-				onClick={() => history.push(`/products/${id}`)}
+				onClick={() => navigate(`/products/${id}`)}
 			>
 				<div className="card-cont--sub-cont__title">{name}</div>
 				<div className="card-cont--sub-cont__subtitle">{subtitle}</div>
@@ -67,7 +73,7 @@ export const Card: FC<Props> = ({ type, product }) => {
 				{type === "wish" && (
 					<Button
 						text="Add to Cart"
-						type="secondary"
+						btnType="secondary"
 						className="w-full mx-auto"
 						onClick={() => dispatch(addItemsTocart(product))}
 					/>

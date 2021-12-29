@@ -1,5 +1,5 @@
 import { useState, FC } from "react";
-import { NavLink, useHistory } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { Logo, Hamburger, Cart } from "icons";
 import { Input } from "components";
 import { useSelector } from "react-redux";
@@ -9,7 +9,7 @@ export const Navbar: FC = () => {
 
 	const [toggle, setToggle] = useState<boolean>(false);
 
-	const history = useHistory();
+	const navigate = useNavigate();
 	const handleToggle = () => setToggle(!toggle);
 
 	return (
@@ -67,7 +67,7 @@ export const Navbar: FC = () => {
 					<Logo />
 				</div>
 
-				<div onClick={() => history.push("/cart")} className="relative">
+				<div onClick={() => navigate("/cart")} className="relative">
 					{cart && <div className="cart-qty">{cart?.length}</div>}
 					<Cart />
 				</div>
@@ -85,15 +85,19 @@ export const Navbar: FC = () => {
 					<div className="flex flex-col md:justify-between md:flex-row md:w-6/12 md:items-center child">
 						<NavLink
 							className="hover-animate navlink"
-							activeStyle={{ color: "#2d4059" }}
 							to="/products"
+							style={({ isActive }) => ({
+								color: isActive ? `#2d4059` : "#000000",
+							})}
 						>
 							All
 						</NavLink>
 
 						<NavLink
 							className="hover-animate navlink"
-							activeStyle={{ color: "#2d4059" }}
+							style={({ isActive }) => ({
+								color: isActive ? `#2d4059` : "#000000",
+							})}
 							to="/men"
 						>
 							Men
@@ -101,7 +105,9 @@ export const Navbar: FC = () => {
 
 						<NavLink
 							className="hover-animate navlink"
-							activeStyle={{ color: "#2d4059" }}
+							style={({ isActive }) => ({
+								color: isActive ? `#2d4059` : "#000000",
+							})}
 							to="/women"
 						>
 							Women
@@ -109,7 +115,9 @@ export const Navbar: FC = () => {
 
 						<NavLink
 							className="hover-animate navlink"
-							activeStyle={{ color: "#2d4059" }}
+							style={({ isActive }) => ({
+								color: isActive ? `#2d4059` : "#000000",
+							})}
 							to="/accessories"
 						>
 							Accessories
@@ -117,7 +125,8 @@ export const Navbar: FC = () => {
 
 						{/* <NavLink
 							className="hover-animate navlink md:hidden mb-4 md:mb-0"
-							activeStyle={{ color: "#2d4059" }}
+							style={({ isActive }) => ({ color: isActive ? `#2d4059` : '#000000' })}
+
 							to="/login"
 						>
 							Login

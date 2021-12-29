@@ -1,20 +1,16 @@
 import { FC } from "react";
 import { AuthNavbar } from "components";
-// import { useHistory } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 // import { isUserLoggedIn, showToast } from "utils";
 
-type Props = {
-	children: any;
-};
-
-export const AuthLayout: FC<Props> = ({ children }) => {
-	// const history = useHistory();
+export const AuthLayout: FC = ({ children }) => {
+	// const navigate = useNavigate();
 	// useEffect(() => {
 	// 	if (!isUserLoggedIn()) {
 	// 		showToast("Login to view this page", "danger");
-	// 		return history.push("/login");
+	// 		return navigate("/login");
 	// 	}
-	// }, [history]);
+	// }, [navigate]);
 
 	return (
 		<div className="w-full bg-grayWhite">
